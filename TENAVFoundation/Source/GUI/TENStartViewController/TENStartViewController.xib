@@ -14,26 +14,43 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-Sh-RZ4">
-                    <rect key="frame" x="162" y="95" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-bT-7CV">
+                    <rect key="frame" x="272" y="285" width="56" height="30"/>
+                    <state key="normal" title="Process">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onProcess:" destination="-1" eventType="touchUpInside" id="YYL-rE-8CS"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-bT-7CV">
-                    <rect key="frame" x="162" y="174" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-dL-FDS">
+                    <rect key="frame" x="261" y="375" width="77" height="30"/>
+                    <state key="normal" title="Play Result">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onPlayResult:" destination="-1" eventType="touchUpInside" id="8O9-ej-6A4"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-dL-FDS">
-                    <rect key="frame" x="162" y="275" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-Sh-RZ4">
+                    <rect key="frame" x="259" y="195" width="82" height="30"/>
+                    <state key="normal" title="Play Source">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onPlaySource:" destination="-1" eventType="touchUpInside" id="SSN-oL-FAo"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="OJb-bT-7CV" secondAttribute="centerX" id="60f-bJ-hfm"/>
+                <constraint firstAttribute="centerX" secondItem="kkO-Sh-RZ4" secondAttribute="centerX" id="SAk-H0-Yv9"/>
+                <constraint firstAttribute="centerX" secondItem="2Ux-dL-FDS" secondAttribute="centerX" id="TlA-5z-Yjz"/>
+                <constraint firstAttribute="centerY" secondItem="OJb-bT-7CV" secondAttribute="centerY" id="cPF-1a-c9e"/>
+                <constraint firstItem="OJb-bT-7CV" firstAttribute="top" secondItem="kkO-Sh-RZ4" secondAttribute="bottom" constant="60" id="gWe-i5-L49"/>
+                <constraint firstItem="2Ux-dL-FDS" firstAttribute="top" secondItem="OJb-bT-7CV" secondAttribute="bottom" constant="60" id="yIa-w7-ZOv"/>
+            </constraints>
         </view>
     </objects>
 </document>
