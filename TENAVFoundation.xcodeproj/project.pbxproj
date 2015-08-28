@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7622093B1B9074ED000E2B9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7622093A1B9074ED000E2B9C /* main.m */; };
+		7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7622093D1B9074ED000E2B9C /* AppDelegate.m */; };
+		762209461B9074ED000E2B9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762209451B9074ED000E2B9C /* Images.xcassets */; };
+		762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209471B9074ED000E2B9C /* LaunchScreen.xib */; };
+		762209551B9074ED000E2B9C /* TENAVFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209541B9074ED000E2B9C /* TENAVFoundationTests.m */; };
+		762209641B9075C5000E2B9C /* TENStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209621B9075C5000E2B9C /* TENStartViewController.m */; };
+		762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209631B9075C5000E2B9C /* TENStartViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7622094F1B9074ED000E2B9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7622092D1B9074ED000E2B9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 762209341B9074ED000E2B9C;
+			remoteInfo = TENAVFoundation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		762209351B9074ED000E2B9C /* TENAVFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TENAVFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		762209391B9074ED000E2B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7622093A1B9074ED000E2B9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7622093C1B9074ED000E2B9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7622093D1B9074ED000E2B9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		762209451B9074ED000E2B9C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		762209481B9074ED000E2B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7622094E1B9074ED000E2B9C /* TENAVFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TENAVFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		762209531B9074ED000E2B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762209541B9074ED000E2B9C /* TENAVFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TENAVFoundationTests.m; sourceTree = "<group>"; };
+		762209611B9075C5000E2B9C /* TENStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENStartViewController.h; sourceTree = "<group>"; };
+		762209621B9075C5000E2B9C /* TENStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENStartViewController.m; sourceTree = "<group>"; };
+		762209631B9075C5000E2B9C /* TENStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENStartViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		762209321B9074ED000E2B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7622094B1B9074ED000E2B9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7622092C1B9074ED000E2B9C = {
+			isa = PBXGroup;
+			children = (
+				7622095E1B907598000E2B9C /* Source */,
+				762209371B9074ED000E2B9C /* TENAVFoundation */,
+				762209511B9074ED000E2B9C /* TENAVFoundationTests */,
+				762209361B9074ED000E2B9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		762209361B9074ED000E2B9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				762209351B9074ED000E2B9C /* TENAVFoundation.app */,
+				7622094E1B9074ED000E2B9C /* TENAVFoundationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		762209371B9074ED000E2B9C /* TENAVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				7622093C1B9074ED000E2B9C /* AppDelegate.h */,
+				7622093D1B9074ED000E2B9C /* AppDelegate.m */,
+				762209451B9074ED000E2B9C /* Images.xcassets */,
+				762209471B9074ED000E2B9C /* LaunchScreen.xib */,
+				762209381B9074ED000E2B9C /* Supporting Files */,
+			);
+			path = TENAVFoundation;
+			sourceTree = "<group>";
+		};
+		762209381B9074ED000E2B9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				762209391B9074ED000E2B9C /* Info.plist */,
+				7622093A1B9074ED000E2B9C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		762209511B9074ED000E2B9C /* TENAVFoundationTests */ = {
+			isa = PBXGroup;
+			children = (
+				762209541B9074ED000E2B9C /* TENAVFoundationTests.m */,
+				762209521B9074ED000E2B9C /* Supporting Files */,
+			);
+			path = TENAVFoundationTests;
+			sourceTree = "<group>";
+		};
+		762209521B9074ED000E2B9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				762209531B9074ED000E2B9C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7622095E1B907598000E2B9C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7622095F1B907598000E2B9C /* GUI */,
+			);
+			name = Source;
+			path = TENAVFoundation/Source;
+			sourceTree = "<group>";
+		};
+		7622095F1B907598000E2B9C /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				762209601B907598000E2B9C /* TENStartViewController */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		762209601B907598000E2B9C /* TENStartViewController */ = {
+			isa = PBXGroup;
+			children = (
+				762209611B9075C5000E2B9C /* TENStartViewController.h */,
+				762209621B9075C5000E2B9C /* TENStartViewController.m */,
+				762209631B9075C5000E2B9C /* TENStartViewController.xib */,
+			);
+			path = TENStartViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		762209341B9074ED000E2B9C /* TENAVFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 762209581B9074ED000E2B9C /* Build configuration list for PBXNativeTarget "TENAVFoundation" */;
+			buildPhases = (
+				762209311B9074ED000E2B9C /* Sources */,
+				762209321B9074ED000E2B9C /* Frameworks */,
+				762209331B9074ED000E2B9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TENAVFoundation;
+			productName = TENAVFoundation;
+			productReference = 762209351B9074ED000E2B9C /* TENAVFoundation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7622094D1B9074ED000E2B9C /* TENAVFoundationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7622095B1B9074ED000E2B9C /* Build configuration list for PBXNativeTarget "TENAVFoundationTests" */;
+			buildPhases = (
+				7622094A1B9074ED000E2B9C /* Sources */,
+				7622094B1B9074ED000E2B9C /* Frameworks */,
+				7622094C1B9074ED000E2B9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				762209501B9074ED000E2B9C /* PBXTargetDependency */,
+			);
+			name = TENAVFoundationTests;
+			productName = TENAVFoundationTests;
+			productReference = 7622094E1B9074ED000E2B9C /* TENAVFoundationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7622092D1B9074ED000E2B9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = 444ten;
+				TargetAttributes = {
+					762209341B9074ED000E2B9C = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					7622094D1B9074ED000E2B9C = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 762209341B9074ED000E2B9C;
+					};
+				};
+			};
+			buildConfigurationList = 762209301B9074ED000E2B9C /* Build configuration list for PBXProject "TENAVFoundation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7622092C1B9074ED000E2B9C;
+			productRefGroup = 762209361B9074ED000E2B9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				762209341B9074ED000E2B9C /* TENAVFoundation */,
+				7622094D1B9074ED000E2B9C /* TENAVFoundationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		762209331B9074ED000E2B9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */,
+				762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */,
+				762209461B9074ED000E2B9C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7622094C1B9074ED000E2B9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		762209311B9074ED000E2B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762209641B9075C5000E2B9C /* TENStartViewController.m in Sources */,
+				7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */,
+				7622093B1B9074ED000E2B9C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7622094A1B9074ED000E2B9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762209551B9074ED000E2B9C /* TENAVFoundationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		762209501B9074ED000E2B9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 762209341B9074ED000E2B9C /* TENAVFoundation */;
+			targetProxy = 7622094F1B9074ED000E2B9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		762209471B9074ED000E2B9C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				762209481B9074ED000E2B9C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		762209561B9074ED000E2B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		762209571B9074ED000E2B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		762209591B9074ED000E2B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TENAVFoundation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7622095A1B9074ED000E2B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TENAVFoundation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7622095C1B9074ED000E2B9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TENAVFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TENAVFoundation.app/TENAVFoundation";
+			};
+			name = Debug;
+		};
+		7622095D1B9074ED000E2B9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TENAVFoundationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TENAVFoundation.app/TENAVFoundation";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		762209301B9074ED000E2B9C /* Build configuration list for PBXProject "TENAVFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762209561B9074ED000E2B9C /* Debug */,
+				762209571B9074ED000E2B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		762209581B9074ED000E2B9C /* Build configuration list for PBXNativeTarget "TENAVFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				762209591B9074ED000E2B9C /* Debug */,
+				7622095A1B9074ED000E2B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7622095B1B9074ED000E2B9C /* Build configuration list for PBXNativeTarget "TENAVFoundationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7622095C1B9074ED000E2B9C /* Debug */,
+				7622095D1B9074ED000E2B9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7622092D1B9074ED000E2B9C /* Project object */;
+}
