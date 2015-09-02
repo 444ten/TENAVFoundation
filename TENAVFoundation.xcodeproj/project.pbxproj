@@ -14,6 +14,9 @@
 		762209551B9074ED000E2B9C /* TENAVFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209541B9074ED000E2B9C /* TENAVFoundationTests.m */; };
 		762209641B9075C5000E2B9C /* TENStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209621B9075C5000E2B9C /* TENStartViewController.m */; };
 		762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209631B9075C5000E2B9C /* TENStartViewController.xib */; };
+		762209681B907E06000E2B9C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 762209671B907E06000E2B9C /* test.mp3 */; };
+		769DC1551B95D57600739040 /* lady.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769DC1541B95D57600739040 /* lady.mp3 */; };
+		76DD4C0F1B958FCF00CB88EE /* recorded.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 76DD4C0E1B958FC100CB88EE /* recorded.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,10 @@
 		762209611B9075C5000E2B9C /* TENStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENStartViewController.h; sourceTree = "<group>"; };
 		762209621B9075C5000E2B9C /* TENStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENStartViewController.m; sourceTree = "<group>"; };
 		762209631B9075C5000E2B9C /* TENStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENStartViewController.xib; sourceTree = "<group>"; };
+		762209671B907E06000E2B9C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		769DC1541B95D57600739040 /* lady.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lady.mp3; sourceTree = "<group>"; };
+		76DD4C0E1B958FC100CB88EE /* recorded.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recorded.m4a; sourceTree = "<group>"; };
+		76DD4C101B95909400CB88EE /* 2015-08-31 16:49:41_recorded.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2015-08-31 16:49:41_recorded.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 		7622092C1B9074ED000E2B9C = {
 			isa = PBXGroup;
 			children = (
+				762209661B907DF4000E2B9C /* Music */,
 				7622095E1B907598000E2B9C /* Source */,
 				762209371B9074ED000E2B9C /* TENAVFoundation */,
 				762209511B9074ED000E2B9C /* TENAVFoundationTests */,
@@ -142,6 +150,18 @@
 				762209631B9075C5000E2B9C /* TENStartViewController.xib */,
 			);
 			path = TENStartViewController;
+			sourceTree = "<group>";
+		};
+		762209661B907DF4000E2B9C /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				762209671B907E06000E2B9C /* test.mp3 */,
+				769DC1541B95D57600739040 /* lady.mp3 */,
+				76DD4C0E1B958FC100CB88EE /* recorded.m4a */,
+				76DD4C101B95909400CB88EE /* 2015-08-31 16:49:41_recorded.m4a */,
+			);
+			name = Music;
+			path = TENAVFoundation/Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +246,10 @@
 			files = (
 				762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */,
 				762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */,
+				769DC1551B95D57600739040 /* lady.mp3 in Resources */,
+				762209681B907E06000E2B9C /* test.mp3 in Resources */,
 				762209461B9074ED000E2B9C /* Images.xcassets in Resources */,
+				76DD4C0F1B958FCF00CB88EE /* recorded.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +458,7 @@
 				7622095A1B9074ED000E2B9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7622095B1B9074ED000E2B9C /* Build configuration list for PBXNativeTarget "TENAVFoundationTests" */ = {
 			isa = XCConfigurationList;
@@ -443,6 +467,7 @@
 				7622095D1B9074ED000E2B9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
