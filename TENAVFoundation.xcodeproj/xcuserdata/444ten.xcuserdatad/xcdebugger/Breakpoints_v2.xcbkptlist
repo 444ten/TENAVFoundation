@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.m"
-            timestampString = "462890340.826108"
+            timestampString = "462965874.555095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-onPlaySource:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.m"
-            timestampString = "462895728.753034"
+            timestampString = "462965874.555095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-onProcess:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.m"
-            timestampString = "462961228.502971"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-onProcess:"
             landmarkType = "5">
          </BreakpointContent>

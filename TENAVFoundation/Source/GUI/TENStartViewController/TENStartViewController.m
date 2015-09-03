@@ -10,7 +10,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-static NSString * const kTENSourceName      = @"test";
+static NSString * const kTENSourceName      = @"lady";
 static NSString * const kTENSourceExtension = @"mp3";
 
 static NSString * const kTENProcessedFileNameFormat = @"%@_processed.m4a";
@@ -18,13 +18,21 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 
 @interface TENStartViewController ()
-@property (nonatomic, strong)   NSURL               *sourceUrl;
-@property (nonatomic, strong)   AVURLAsset          *sourceAsset;
-@property (nonatomic, strong)   AVPlayerItem        *playerItem;
-@property (nonatomic, strong)   AVPlayer            *player;
-@property (nonatomic, strong)   AVAssetReader       *reader;
+@property (nonatomic, strong)   AVPlayer                    *sourcePlayer;
+@property (nonatomic, strong)   AVPlayer                    *resultPlayer;
+
+@property (nonatomic, strong)   NSURL                       *sourceUrl;
+@property (nonatomic, strong)   NSURL                       *outputUrl;
+
+@property (nonatomic, strong)   AVURLAsset                  *asset;
+
+@property (nonatomic, strong)   AVAssetReader               *reader;
+@property (nonatomic, strong)   AVAssetReaderTrackOutput    *output;
+
+
 @property (nonatomic, strong)   AVAssetWriter       *writer;
 @property (nonatomic, strong)   AVAssetWriterInput  *input;
+
 @property (nonatomic, strong)   dispatch_queue_t    mediaInputQueue;
 
 @property (nonatomic, assign)   CMBlockBufferRef    blockBuffer;
@@ -56,126 +64,144 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     return _sourceUrl;
 }
 
-- (AVURLAsset *)sourceAsset {
-    if (!_sourceAsset) {
-        _sourceAsset = [[AVURLAsset alloc] initWithURL:self.sourceUrl options:nil];
+- (NSURL *)outputUrl {
+    if (!_outputUrl) {
+        
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)
+                                   firstObject];
+        
+        _outputUrl = [NSURL fileURLWithPath:[documentsPath stringByAppendingPathComponent:[self processedFileName]]];
     }
     
-    return _sourceAsset;
+    return _outputUrl;
 }
 
-- (AVPlayerItem *)playerItem {
-    if (!_playerItem) {
-        _playerItem = [AVPlayerItem playerItemWithAsset:self.sourceAsset];
+- (AVURLAsset *)asset {
+    if (!_asset) {
+        _asset = [[AVURLAsset alloc] initWithURL:self.sourceUrl options:nil];
     }
     
-    return _playerItem;
+    return _asset;
 }
 
-- (AVPlayer *)player {
-    if (!_player) {
-        _player = [AVPlayer playerWithPlayerItem:self.playerItem];
+- (AVAssetReader *)reader {
+    if (!_reader) {
+        NSError *error = nil;
+        _reader = [[AVAssetReader alloc] initWithAsset:self.asset error:&error];
+        NSAssert(!error, @"error: readerInit");
     }
     
-    return _player;
+    return _reader;
 }
 
+- (AVAssetReaderTrackOutput *)output {
+    if (!_output) {
+        AVAssetTrack *track = [[self.asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+        NSDictionary *decompressingAudioSetting = @{ AVFormatIDKey : @(kAudioFormatLinearPCM) };
+        
+        _output = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:track
+                                                             outputSettings:decompressingAudioSetting];
+        _output.alwaysCopiesSampleData = NO;
+
+        AVAssetReader *reader = self.reader;
+        
+        BOOL success = [reader canAddOutput:_output];
+        NSAssert(success, @"error: output");
+
+        [reader addOutput:_output];
+    }
+    
+    return _output;
+}
+
+- (AVAssetWriter *)writer {
+    if (!_writer) {
+        NSError *error = nil;
+        _writer = [[AVAssetWriter alloc] initWithURL:self.outputUrl fileType:AVFileTypeQuickTimeMovie error:&error];
+        NSAssert(!error, @"error: writerInit");
+    }
+    
+    return _writer;
+}
+
+- (AVAssetWriterInput *)input {
+    if (!_input) {
+        AudioChannelLayout stereoChannelLayout = {
+            .mChannelLayoutTag = kAudioChannelLayoutTag_Stereo,
+            .mChannelBitmap = 0,
+            .mNumberChannelDescriptions = 0
+        };
+        
+        NSData *channelLayoutAsData = [NSData dataWithBytes:&stereoChannelLayout
+                                                     length:offsetof(AudioChannelLayout, mChannelDescriptions)];
+        
+        NSDictionary *settings = @{AVFormatIDKey : @(kAudioFormatMPEG4AAC),
+                                   AVSampleRateKey : @44100,
+                                   AVNumberOfChannelsKey : @2,
+                                   AVChannelLayoutKey : channelLayoutAsData,
+                                   AVEncoderBitRateKey : @64000
+                                   };
+
+        _input = [[AVAssetWriterInput alloc] initWithMediaType:AVMediaTypeAudio outputSettings:settings];
+        
+        AVAssetWriter *writer = self.writer;
+        
+        BOOL success = [writer canAddInput:_input];
+        NSAssert(success, @"error: input");
+        
+        [writer addInput:_input];
+    }
+    
+    return _input;
+}
+
+- (dispatch_queue_t)mediaInputQueue {
+    if (!_mediaInputQueue) {
+        _mediaInputQueue = dispatch_queue_create("mediaInputQueue", DISPATCH_QUEUE_SERIAL);
+    }
+    
+    return _mediaInputQueue;
+}
 
 #pragma mark -
 #pragma mark View Handling
 
 - (IBAction)onPlaySource:(id)sender {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSURL *sourceUrl = self.sourceUrl;
     
-    [self.player play];
+    NSLog(@"playSource %@", sourceUrl);
+    
+    AVPlayer *sourcePlayer = [AVPlayer playerWithURL:sourceUrl];
+    self.sourcePlayer = sourcePlayer;
+    
+    [sourcePlayer play];
 }
 
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
     
-    NSError *error = nil;
-    AVAssetReader *reader = [[AVAssetReader alloc] initWithAsset:self.sourceAsset error:&error];
-    if (error) {
-        abort();
-    }
+    BOOL success = NO;
     
-    self.reader = reader;
+    AVAssetReader *reader = self.reader;
+    AVAssetReaderTrackOutput *output = self.output;
     
-//    reader.timeRange = CMTimeRangeMake(kCMTimeZero, kCMTimePositiveInfinity);
+    success = [reader startReading];
+    NSAssert(success, @"error: startReading");
+    
+    AVAssetWriter *writer = self.writer;
+    AVAssetWriterInput *input = self.input;
 
-    AVAsset *asset = reader.asset;
-    
-    AVAssetTrack *track = [[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
-    
-    NSDictionary *decompressingAudioSetting = @{ AVFormatIDKey : @(kAudioFormatLinearPCM) };
-    
-    AVAssetReaderTrackOutput *output = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:track
-                                                                                  outputSettings:decompressingAudioSetting];
-    output.alwaysCopiesSampleData = NO;
-  
-    if (![reader canAddOutput:output]) {
-        abort();
-    }
-    [reader addOutput:output];
-    
-    if (![reader startReading]) {
-        abort();
-    }
-    
-    NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)
-                               firstObject];
-    
-    NSURL *outputUrl = [NSURL fileURLWithPath:[documentsPath stringByAppendingPathComponent:[self processedFileName]]];
-    
-    AVAssetWriter *writer = [[AVAssetWriter alloc] initWithURL:outputUrl fileType:AVFileTypeQuickTimeMovie error:&error];
-    if (error) {
-        abort();
-    }
-    self.writer = writer;
-    
-//    AudioChannelLayout channelLayout;
-//    memset(&channelLayout, 0, sizeof(AudioChannelLayout));
-//    channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
-    
-    AudioChannelLayout stereoChannelLayout = {
-        .mChannelLayoutTag = kAudioChannelLayoutTag_Stereo,
-        .mChannelBitmap = 0,
-        .mNumberChannelDescriptions = 0
-    };
-    
-    NSData *channelLayoutAsData = [NSData dataWithBytes:&stereoChannelLayout
-                                                 length:offsetof(AudioChannelLayout, mChannelDescriptions)];
-    
-    NSDictionary *settings = @{AVFormatIDKey            : @(kAudioFormatMPEG4AAC),
-                               AVSampleRateKey          : @44100,
-                               AVNumberOfChannelsKey    : @2,
-                               AVChannelLayoutKey       : channelLayoutAsData,
-                               AVEncoderBitRateKey      : @64000
-                               };
+    success = [writer startWriting];
+    NSAssert(success, @"error: startWriting");
 
-    
-    AVAssetWriterInput *input = [[AVAssetWriterInput alloc] initWithMediaType:AVMediaTypeAudio outputSettings:settings];
-    self.input = input;
-
-    if (![writer canAddInput:input]) {
-        abort();
-    }
-    [writer addInput:input];
-
-    [writer startWriting];
     [writer startSessionAtSourceTime:kCMTimeZero];
-    
-    dispatch_queue_t mediaInputQueue = dispatch_queue_create("mediaInputQueue", DISPATCH_QUEUE_SERIAL);
-    self.mediaInputQueue = mediaInputQueue;
 
-    [input requestMediaDataWhenReadyOnQueue:mediaInputQueue usingBlock:^{
+    [input requestMediaDataWhenReadyOnQueue:self.mediaInputQueue usingBlock:^{
         while (input.readyForMoreMediaData) {
             CMSampleBufferRef sampleBuffer = [output copyNextSampleBuffer];
 
             if (sampleBuffer) {
-                
                 uint32_t flags = kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment;
-                
                 size_t bufferSize = sizeof(AudioBufferList);
                 
                 self.audioBufferList = calloc(1, bufferSize);
@@ -198,7 +224,6 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                     NSLog(@"writer error %@", writer.error);
                     abort();
                 }
-                
             } else {
                 if (reader.status == AVAssetReaderStatusFailed) {
                     NSLog(@"reader error %@", reader.error);
@@ -209,6 +234,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                 [writer finishWritingWithCompletionHandler:^{
                     NSLog(@"finish");
                 }];
+                
                 break;
             }
         }
@@ -216,8 +242,14 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 }
 
 - (IBAction)onPlayResult:(id)sender {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSURL *outputUrl = self.outputUrl;
     
+    NSLog(@"playResult %@", outputUrl);
+    
+    AVPlayer *resultPlayer = [AVPlayer playerWithURL:outputUrl];
+    self.resultPlayer = resultPlayer;
+    
+    [resultPlayer play];
 }
 
 #pragma mark -
