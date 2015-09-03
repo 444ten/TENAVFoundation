@@ -18,14 +18,18 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 
 @interface TENStartViewController ()
-@property (nonatomic, strong) NSURL                 *sourceUrl;
-@property (nonatomic, strong) AVURLAsset            *sourceAsset;
-@property (nonatomic, strong) AVPlayerItem          *playerItem;
-@property (nonatomic, strong) AVPlayer              *player;
-@property (nonatomic, strong) AVAssetReader         *reader;
-@property (nonatomic, strong) AVAssetWriter         *writer;
-@property (nonatomic, strong) AVAssetWriterInput    *input;
-@property (nonatomic, strong) dispatch_queue_t      mediaInputQueue;
+@property (nonatomic, strong)   NSURL               *sourceUrl;
+@property (nonatomic, strong)   AVURLAsset          *sourceAsset;
+@property (nonatomic, strong)   AVPlayerItem        *playerItem;
+@property (nonatomic, strong)   AVPlayer            *player;
+@property (nonatomic, strong)   AVAssetReader       *reader;
+@property (nonatomic, strong)   AVAssetWriter       *writer;
+@property (nonatomic, strong)   AVAssetWriterInput  *input;
+@property (nonatomic, strong)   dispatch_queue_t    mediaInputQueue;
+
+@property (nonatomic, assign)   CMBlockBufferRef    blockBuffer;
+@property (nonatomic, assign)   AudioBufferList     *audioBufferList;
+
 
 - (NSString *)processedFileName;
 
@@ -75,6 +79,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     
     return _player;
 }
+
 
 #pragma mark -
 #pragma mark View Handling
@@ -168,6 +173,22 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
             CMSampleBufferRef sampleBuffer = [output copyNextSampleBuffer];
 
             if (sampleBuffer) {
+                
+                uint32_t flags = kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment;
+                
+                size_t bufferSize = sizeof(AudioBufferList);
+                
+                self.audioBufferList = calloc(1, bufferSize);
+                
+                OSStatus result = CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer,
+                                                                                          NULL,
+                                                                                          _audioBufferList,
+                                                                                          bufferSize,
+                                                                                          NULL,
+                                                                                          NULL,
+                                                                                          flags,
+                                                                                          &_blockBuffer);
+                
                 BOOL success = [input appendSampleBuffer:sampleBuffer];
 
                 CFRelease(sampleBuffer);
