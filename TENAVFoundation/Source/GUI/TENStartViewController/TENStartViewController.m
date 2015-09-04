@@ -10,7 +10,11 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-static NSString * const kTENSourceName      = @"lady";
+#import "NSObject+IDPExtensions.h"
+
+#import "AEEqualizerFilter.h"
+
+static NSString * const kTENSourceName      = @"test";
 static NSString * const kTENSourceExtension = @"mp3";
 
 static NSString * const kTENProcessedFileNameFormat = @"%@_processed.m4a";
@@ -37,6 +41,8 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 @property (nonatomic, assign)   CMBlockBufferRef    blockBuffer;
 @property (nonatomic, assign)   AudioBufferList     *audioBufferList;
+
+@property (nonatomic, strong)   AEEqualizerFilter   *filter;
 
 
 - (NSString *)processedFileName;
@@ -97,7 +103,10 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 - (AVAssetReaderTrackOutput *)output {
     if (!_output) {
         AVAssetTrack *track = [[self.asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
-        NSDictionary *decompressingAudioSetting = @{ AVFormatIDKey : @(kAudioFormatLinearPCM) };
+        NSDictionary *decompressingAudioSetting = @{ AVFormatIDKey : @(kAudioFormatLinearPCM),
+                                                     AVLinearPCMIsFloatKey : @(YES),
+                                                     AVLinearPCMBitDepthKey : @(32)
+                                                     };
         
         _output = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:track
                                                              outputSettings:decompressingAudioSetting];
@@ -175,10 +184,16 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     self.sourcePlayer = sourcePlayer;
     
     [sourcePlayer play];
+    
+    
 }
 
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    AEEqualizerFilter *filter = [AEEqualizerFilter object];
+    [filter setup];
+    self.filter = filter;
     
     BOOL success = NO;
     
@@ -214,6 +229,19 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                                                                                           NULL,
                                                                                           flags,
                                                                                           &_blockBuffer);
+                NSAssert(0 == result, @"error:_audioBufferList");
+
+                
+                
+                UInt32 sampleCount = (UInt32)CMSampleBufferGetNumSamples(sampleBuffer);
+                
+                [self.filter filterAudioBuffer:self.audioBufferList framesCount:sampleCount];
+                
+                CMSampleBufferSetDataBufferFromAudioBufferList(sampleBuffer,
+                                                               kCFAllocatorDefault,
+                                                               kCFAllocatorDefault,
+                                                               flags,
+                                                               _audioBufferList);
                 
                 BOOL success = [input appendSampleBuffer:sampleBuffer];
 
