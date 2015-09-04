@@ -68,7 +68,7 @@ static NVDSP *filters[kBandCount];
 }
 
 - (void)update {
-    static float step = 1.0;
+    static float step = 0.2;
     static float coefficient = - 1.0;
     static float sign = 1.0;
     

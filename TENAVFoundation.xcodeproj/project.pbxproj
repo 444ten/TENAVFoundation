@@ -24,16 +24,44 @@
 		76138ACC1B98600A00E03BF5 /* NVSoundLevelMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76138ABE1B98600A00E03BF5 /* NVSoundLevelMeter.m */; };
 		76138ACF1B98605600E03BF5 /* WADSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 76138ACE1B98605600E03BF5 /* WADSP.m */; };
 		76138AD21B9868E200E03BF5 /* NSObject+IDPExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76138AD11B9868E200E03BF5 /* NSObject+IDPExtensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		76138B2F1B998C4100E03BF5 /* didy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76138B2E1B998C4100E03BF5 /* didy.mp3 */; };
+		76138B711B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B371B99A44D00E03BF5 /* libaufTAKT.a */; };
+		76138B721B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B381B99A44D00E03BF5 /* libfxpack.a */; };
+		76138B731B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B391B99A44D00E03BF5 /* libOnsetTracking.a */; };
+		76138B741B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B751B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */; };
+		76138B761B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3D1B99A44D00E03BF5 /* libfxpack.a */; };
+		76138B771B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */; };
+		76138B781B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B791B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B471B99A44D00E03BF5 /* libelastiqueEfficientV3.a */; };
+		76138B7A1B99A44D00E03BF5 /* libResample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B481B99A44D00E03BF5 /* libResample.a */; };
+		76138B7B1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B491B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B7C1B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B4B1B99A44D00E03BF5 /* libelastiqueEfficientV3.a */; };
+		76138B7D1B99A44D00E03BF5 /* libResample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B4C1B99A44D00E03BF5 /* libResample.a */; };
+		76138B7E1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B4D1B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B7F1B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B5D1B99A44D00E03BF5 /* libfxpack.a */; };
+		76138B801B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B5E1B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B811B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B601B99A44D00E03BF5 /* libfxpack.a */; };
+		76138B821B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B611B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B831B99A44D00E03BF5 /* libEqualizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B681B99A44D00E03BF5 /* libEqualizer.a */; };
+		76138B841B99A44D00E03BF5 /* libResample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B691B99A44D00E03BF5 /* libResample.a */; };
+		76138B851B99A44D00E03BF5 /* libtONaRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B6A1B99A44D00E03BF5 /* libtONaRT.a */; };
+		76138B861B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B6B1B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B871B99A44D00E03BF5 /* libEqualizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B6D1B99A44D00E03BF5 /* libEqualizer.a */; };
+		76138B881B99A44D00E03BF5 /* libResample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B6E1B99A44D00E03BF5 /* libResample.a */; };
+		76138B891B99A44D00E03BF5 /* libtONaRT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B6F1B99A44D00E03BF5 /* libtONaRT.a */; };
+		76138B8A1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B701B99A44D00E03BF5 /* libzplVecLib.a */; };
+		76138B8C1B99A61500E03BF5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B8B1B99A61500E03BF5 /* AVFoundation.framework */; };
+		76138B8E1B99A62900E03BF5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B8D1B99A62900E03BF5 /* CoreMedia.framework */; };
 		7622093B1B9074ED000E2B9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7622093A1B9074ED000E2B9C /* main.m */; };
 		7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7622093D1B9074ED000E2B9C /* AppDelegate.m */; };
 		762209461B9074ED000E2B9C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762209451B9074ED000E2B9C /* Images.xcassets */; };
 		762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209471B9074ED000E2B9C /* LaunchScreen.xib */; };
 		762209551B9074ED000E2B9C /* TENAVFoundationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209541B9074ED000E2B9C /* TENAVFoundationTests.m */; };
-		762209641B9075C5000E2B9C /* TENStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762209621B9075C5000E2B9C /* TENStartViewController.m */; };
+		762209641B9075C5000E2B9C /* TENStartViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 762209621B9075C5000E2B9C /* TENStartViewController.mm */; };
 		762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209631B9075C5000E2B9C /* TENStartViewController.xib */; };
 		762209681B907E06000E2B9C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 762209671B907E06000E2B9C /* test.mp3 */; };
 		769DC1551B95D57600739040 /* lady.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769DC1541B95D57600739040 /* lady.mp3 */; };
-		76DD4C0F1B958FCF00CB88EE /* recorded.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 76DD4C0E1B958FC100CB88EE /* recorded.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +107,49 @@
 		76138ACE1B98605600E03BF5 /* WADSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADSP.m; sourceTree = "<group>"; };
 		76138AD01B9868E200E03BF5 /* NSObject+IDPExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+IDPExtensions.h"; sourceTree = "<group>"; };
 		76138AD11B9868E200E03BF5 /* NSObject+IDPExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+IDPExtensions.m"; sourceTree = "<group>"; };
+		76138B2E1B998C4100E03BF5 /* didy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = didy.mp3; sourceTree = "<group>"; };
+		76138B331B99A44D00E03BF5 /* aufTAKT_If.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aufTAKT_If.h; sourceTree = "<group>"; };
+		76138B371B99A44D00E03BF5 /* libaufTAKT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libaufTAKT.a; sourceTree = "<group>"; };
+		76138B381B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
+		76138B391B99A44D00E03BF5 /* libOnsetTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOnsetTracking.a; sourceTree = "<group>"; };
+		76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libaufTAKT.a; sourceTree = "<group>"; };
+		76138B3D1B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
+		76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOnsetTracking.a; sourceTree = "<group>"; };
+		76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B421B99A44D00E03BF5 /* elastiqueV3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elastiqueV3API.h; sourceTree = "<group>"; };
+		76138B431B99A44D00E03BF5 /* elastiqueV3DirectAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elastiqueV3DirectAPI.h; sourceTree = "<group>"; };
+		76138B471B99A44D00E03BF5 /* libelastiqueEfficientV3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelastiqueEfficientV3.a; sourceTree = "<group>"; };
+		76138B481B99A44D00E03BF5 /* libResample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libResample.a; sourceTree = "<group>"; };
+		76138B491B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B4B1B99A44D00E03BF5 /* libelastiqueEfficientV3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelastiqueEfficientV3.a; sourceTree = "<group>"; };
+		76138B4C1B99A44D00E03BF5 /* libResample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libResample.a; sourceTree = "<group>"; };
+		76138B4D1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B501B99A44D00E03BF5 /* BitCrushIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitCrushIf.h; sourceTree = "<group>"; };
+		76138B511B99A44D00E03BF5 /* ChorusFlangerIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChorusFlangerIf.h; sourceTree = "<group>"; };
+		76138B521B99A44D00E03BF5 /* DelayIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelayIf.h; sourceTree = "<group>"; };
+		76138B531B99A44D00E03BF5 /* DynamicsIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicsIf.h; sourceTree = "<group>"; };
+		76138B541B99A44D00E03BF5 /* fxpack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fxpack.h; sourceTree = "<group>"; };
+		76138B551B99A44D00E03BF5 /* LoopRollIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopRollIf.h; sourceTree = "<group>"; };
+		76138B561B99A44D00E03BF5 /* ParamEQIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParamEQIf.h; sourceTree = "<group>"; };
+		76138B571B99A44D00E03BF5 /* PhaserIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaserIf.h; sourceTree = "<group>"; };
+		76138B581B99A44D00E03BF5 /* ResonanceFilterIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResonanceFilterIf.h; sourceTree = "<group>"; };
+		76138B591B99A44D00E03BF5 /* WahWahIf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WahWahIf.h; sourceTree = "<group>"; };
+		76138B5D1B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
+		76138B5E1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B601B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
+		76138B611B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B641B99A44D00E03BF5 /* tONaRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tONaRT.h; sourceTree = "<group>"; };
+		76138B681B99A44D00E03BF5 /* libEqualizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEqualizer.a; sourceTree = "<group>"; };
+		76138B691B99A44D00E03BF5 /* libResample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libResample.a; sourceTree = "<group>"; };
+		76138B6A1B99A44D00E03BF5 /* libtONaRT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtONaRT.a; sourceTree = "<group>"; };
+		76138B6B1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B6D1B99A44D00E03BF5 /* libEqualizer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEqualizer.a; sourceTree = "<group>"; };
+		76138B6E1B99A44D00E03BF5 /* libResample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libResample.a; sourceTree = "<group>"; };
+		76138B6F1B99A44D00E03BF5 /* libtONaRT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libtONaRT.a; sourceTree = "<group>"; };
+		76138B701B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
+		76138B8B1B99A61500E03BF5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		76138B8D1B99A62900E03BF5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		762209351B9074ED000E2B9C /* TENAVFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TENAVFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		762209391B9074ED000E2B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7622093A1B9074ED000E2B9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -90,12 +161,10 @@
 		762209531B9074ED000E2B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		762209541B9074ED000E2B9C /* TENAVFoundationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TENAVFoundationTests.m; sourceTree = "<group>"; };
 		762209611B9075C5000E2B9C /* TENStartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENStartViewController.h; sourceTree = "<group>"; };
-		762209621B9075C5000E2B9C /* TENStartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENStartViewController.m; sourceTree = "<group>"; };
+		762209621B9075C5000E2B9C /* TENStartViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENStartViewController.mm; sourceTree = "<group>"; };
 		762209631B9075C5000E2B9C /* TENStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENStartViewController.xib; sourceTree = "<group>"; };
 		762209671B907E06000E2B9C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		769DC1541B95D57600739040 /* lady.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lady.mp3; sourceTree = "<group>"; };
-		76DD4C0E1B958FC100CB88EE /* recorded.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = recorded.m4a; sourceTree = "<group>"; };
-		76DD4C101B95909400CB88EE /* 2015-08-31 16:49:41_recorded.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "2015-08-31 16:49:41_recorded.m4a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +172,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76138B8E1B99A62900E03BF5 /* CoreMedia.framework in Frameworks */,
+				76138B8C1B99A61500E03BF5 /* AVFoundation.framework in Frameworks */,
+				76138B841B99A44D00E03BF5 /* libResample.a in Frameworks */,
+				76138B7A1B99A44D00E03BF5 /* libResample.a in Frameworks */,
+				76138B721B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
+				76138B8A1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B811B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
+				76138B7F1B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
+				76138B7D1B99A44D00E03BF5 /* libResample.a in Frameworks */,
+				76138B891B99A44D00E03BF5 /* libtONaRT.a in Frameworks */,
+				76138B791B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */,
+				76138B751B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */,
+				76138B761B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
+				76138B771B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */,
+				76138B851B99A44D00E03BF5 /* libtONaRT.a in Frameworks */,
+				76138B7B1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B731B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */,
+				76138B7E1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B711B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */,
+				76138B831B99A44D00E03BF5 /* libEqualizer.a in Frameworks */,
+				76138B741B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B871B99A44D00E03BF5 /* libEqualizer.a in Frameworks */,
+				76138B861B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B7C1B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */,
+				76138B881B99A44D00E03BF5 /* libResample.a in Frameworks */,
+				76138B821B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B781B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76138B801B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,9 +281,251 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		76138B301B99A44D00E03BF5 /* zplane */ = {
+			isa = PBXGroup;
+			children = (
+				76138B311B99A44D00E03BF5 /* auftakt */,
+				76138B401B99A44D00E03BF5 /* elastique */,
+				76138B4E1B99A44D00E03BF5 /* fxpack */,
+				76138B621B99A44D00E03BF5 /* tonart */,
+			);
+			path = zplane;
+			sourceTree = "<group>";
+		};
+		76138B311B99A44D00E03BF5 /* auftakt */ = {
+			isa = PBXGroup;
+			children = (
+				76138B321B99A44D00E03BF5 /* incl */,
+				76138B341B99A44D00E03BF5 /* lib */,
+			);
+			path = auftakt;
+			sourceTree = "<group>";
+		};
+		76138B321B99A44D00E03BF5 /* incl */ = {
+			isa = PBXGroup;
+			children = (
+				76138B331B99A44D00E03BF5 /* aufTAKT_If.h */,
+			);
+			path = incl;
+			sourceTree = "<group>";
+		};
+		76138B341B99A44D00E03BF5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				76138B351B99A44D00E03BF5 /* ios */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		76138B351B99A44D00E03BF5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				76138B361B99A44D00E03BF5 /* iphoneos */,
+				76138B3B1B99A44D00E03BF5 /* iphonesimulator */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		76138B361B99A44D00E03BF5 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				76138B371B99A44D00E03BF5 /* libaufTAKT.a */,
+				76138B381B99A44D00E03BF5 /* libfxpack.a */,
+				76138B391B99A44D00E03BF5 /* libOnsetTracking.a */,
+				76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		76138B3B1B99A44D00E03BF5 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */,
+				76138B3D1B99A44D00E03BF5 /* libfxpack.a */,
+				76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */,
+				76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		76138B401B99A44D00E03BF5 /* elastique */ = {
+			isa = PBXGroup;
+			children = (
+				76138B411B99A44D00E03BF5 /* incl */,
+				76138B441B99A44D00E03BF5 /* lib */,
+			);
+			path = elastique;
+			sourceTree = "<group>";
+		};
+		76138B411B99A44D00E03BF5 /* incl */ = {
+			isa = PBXGroup;
+			children = (
+				76138B421B99A44D00E03BF5 /* elastiqueV3API.h */,
+				76138B431B99A44D00E03BF5 /* elastiqueV3DirectAPI.h */,
+			);
+			path = incl;
+			sourceTree = "<group>";
+		};
+		76138B441B99A44D00E03BF5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				76138B451B99A44D00E03BF5 /* ios */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		76138B451B99A44D00E03BF5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				76138B461B99A44D00E03BF5 /* iphoneos */,
+				76138B4A1B99A44D00E03BF5 /* iphonesimulator */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		76138B461B99A44D00E03BF5 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				76138B471B99A44D00E03BF5 /* libelastiqueEfficientV3.a */,
+				76138B481B99A44D00E03BF5 /* libResample.a */,
+				76138B491B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		76138B4A1B99A44D00E03BF5 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				76138B4B1B99A44D00E03BF5 /* libelastiqueEfficientV3.a */,
+				76138B4C1B99A44D00E03BF5 /* libResample.a */,
+				76138B4D1B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		76138B4E1B99A44D00E03BF5 /* fxpack */ = {
+			isa = PBXGroup;
+			children = (
+				76138B4F1B99A44D00E03BF5 /* incl */,
+				76138B5A1B99A44D00E03BF5 /* lib */,
+			);
+			path = fxpack;
+			sourceTree = "<group>";
+		};
+		76138B4F1B99A44D00E03BF5 /* incl */ = {
+			isa = PBXGroup;
+			children = (
+				76138B501B99A44D00E03BF5 /* BitCrushIf.h */,
+				76138B511B99A44D00E03BF5 /* ChorusFlangerIf.h */,
+				76138B521B99A44D00E03BF5 /* DelayIf.h */,
+				76138B531B99A44D00E03BF5 /* DynamicsIf.h */,
+				76138B541B99A44D00E03BF5 /* fxpack.h */,
+				76138B551B99A44D00E03BF5 /* LoopRollIf.h */,
+				76138B561B99A44D00E03BF5 /* ParamEQIf.h */,
+				76138B571B99A44D00E03BF5 /* PhaserIf.h */,
+				76138B581B99A44D00E03BF5 /* ResonanceFilterIf.h */,
+				76138B591B99A44D00E03BF5 /* WahWahIf.h */,
+			);
+			path = incl;
+			sourceTree = "<group>";
+		};
+		76138B5A1B99A44D00E03BF5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				76138B5B1B99A44D00E03BF5 /* ios */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		76138B5B1B99A44D00E03BF5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				76138B5C1B99A44D00E03BF5 /* iphoneos */,
+				76138B5F1B99A44D00E03BF5 /* iphonesimulator */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		76138B5C1B99A44D00E03BF5 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				76138B5D1B99A44D00E03BF5 /* libfxpack.a */,
+				76138B5E1B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		76138B5F1B99A44D00E03BF5 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				76138B601B99A44D00E03BF5 /* libfxpack.a */,
+				76138B611B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		76138B621B99A44D00E03BF5 /* tonart */ = {
+			isa = PBXGroup;
+			children = (
+				76138B631B99A44D00E03BF5 /* incl */,
+				76138B651B99A44D00E03BF5 /* lib */,
+			);
+			path = tonart;
+			sourceTree = "<group>";
+		};
+		76138B631B99A44D00E03BF5 /* incl */ = {
+			isa = PBXGroup;
+			children = (
+				76138B641B99A44D00E03BF5 /* tONaRT.h */,
+			);
+			path = incl;
+			sourceTree = "<group>";
+		};
+		76138B651B99A44D00E03BF5 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				76138B661B99A44D00E03BF5 /* ios */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		76138B661B99A44D00E03BF5 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				76138B671B99A44D00E03BF5 /* iphoneos */,
+				76138B6C1B99A44D00E03BF5 /* iphonesimulator */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		76138B671B99A44D00E03BF5 /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				76138B681B99A44D00E03BF5 /* libEqualizer.a */,
+				76138B691B99A44D00E03BF5 /* libResample.a */,
+				76138B6A1B99A44D00E03BF5 /* libtONaRT.a */,
+				76138B6B1B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		76138B6C1B99A44D00E03BF5 /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				76138B6D1B99A44D00E03BF5 /* libEqualizer.a */,
+				76138B6E1B99A44D00E03BF5 /* libResample.a */,
+				76138B6F1B99A44D00E03BF5 /* libtONaRT.a */,
+				76138B701B99A44D00E03BF5 /* libzplVecLib.a */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
 		7622092C1B9074ED000E2B9C = {
 			isa = PBXGroup;
 			children = (
+				76138B8D1B99A62900E03BF5 /* CoreMedia.framework */,
+				76138B8B1B99A61500E03BF5 /* AVFoundation.framework */,
+				76138B301B99A44D00E03BF5 /* zplane */,
 				76138AA21B98600200E03BF5 /* NVDSP */,
 				762209661B907DF4000E2B9C /* Music */,
 				7622095E1B907598000E2B9C /* Source */,
@@ -267,7 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				762209611B9075C5000E2B9C /* TENStartViewController.h */,
-				762209621B9075C5000E2B9C /* TENStartViewController.m */,
+				762209621B9075C5000E2B9C /* TENStartViewController.mm */,
 				762209631B9075C5000E2B9C /* TENStartViewController.xib */,
 			);
 			path = TENStartViewController;
@@ -277,9 +616,8 @@
 			isa = PBXGroup;
 			children = (
 				762209671B907E06000E2B9C /* test.mp3 */,
+				76138B2E1B998C4100E03BF5 /* didy.mp3 */,
 				769DC1541B95D57600739040 /* lady.mp3 */,
-				76DD4C0E1B958FC100CB88EE /* recorded.m4a */,
-				76DD4C101B95909400CB88EE /* 2015-08-31 16:49:41_recorded.m4a */,
 			);
 			name = Music;
 			path = TENAVFoundation/Music;
@@ -371,7 +709,7 @@
 				76138AC81B98600A00E03BF5 /* license.txt in Resources */,
 				762209681B907E06000E2B9C /* test.mp3 in Resources */,
 				762209461B9074ED000E2B9C /* Images.xcassets in Resources */,
-				76DD4C0F1B958FCF00CB88EE /* recorded.m4a in Resources */,
+				76138B2F1B998C4100E03BF5 /* didy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +727,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762209641B9075C5000E2B9C /* TENStartViewController.m in Sources */,
+				762209641B9075C5000E2B9C /* TENStartViewController.mm in Sources */,
 				76138AD21B9868E200E03BF5 /* NSObject+IDPExtensions.m in Sources */,
 				7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */,
 				76138ABF1B98600A00E03BF5 /* NVAllpassFilter.m in Sources */,
@@ -477,7 +815,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -515,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -530,6 +868,13 @@
 				INFOPLIST_FILE = TENAVFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zplane/tonart/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/auftakt/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/elastique/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/fxpack/lib/ios/$(PLATFORM_NAME)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -541,6 +886,13 @@
 				INFOPLIST_FILE = TENAVFoundation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/zplane/tonart/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/auftakt/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/elastique/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/zplane/fxpack/lib/ios/$(PLATFORM_NAME)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
