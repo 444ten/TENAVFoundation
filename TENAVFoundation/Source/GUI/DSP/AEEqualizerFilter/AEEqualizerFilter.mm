@@ -62,14 +62,29 @@ static NVDSP *filters[kBandCount];
 #pragma mark Public Methods
 
 - (void)setup {
-    ((NVLowShelvingFilter *)filters[kLowFilterIndex]).G = 1.0 * kMaxBandGainDb;
-    ((NVPeakingEQFilter *)filters[kMidFilterIndex]).G = -1.0 * kMaxBandGainDb;
-    ((NVHighShelvingFilter *)filters[kHighFilterIndex]).G = -1.0 * kMaxBandGainDb;
+    ((NVLowShelvingFilter *)filters[kLowFilterIndex]).G = 0.0 * kMaxBandGainDb;
+    ((NVPeakingEQFilter *)filters[kMidFilterIndex]).G = 0.0 * kMaxBandGainDb;
+    ((NVHighShelvingFilter *)filters[kHighFilterIndex]).G = 0.0 * kMaxBandGainDb;
+}
+
+- (void)update {
+    static float step = 1.0;
+    static float coefficient = - 1.0;
+    static float sign = 1.0;
+    
+    ((NVLowShelvingFilter *)filters[kLowFilterIndex]).G = coefficient * kMaxBandGainDb;
+    
+    coefficient += sign * step;
+    
+    if (coefficient > 1.0 || coefficient < -1.0) {
+        sign *= -1.0;
+    }
 }
 
 - (void)filterAudioBuffer:(AudioBufferList *)buffer framesCount:(UInt32)framesCount {
     if (buffer) {
         for (NSUInteger bufferIndex = 0; bufferIndex < buffer->mNumberBuffers; bufferIndex++) {
+            [self update];
             AudioBuffer audioBuffer = buffer->mBuffers[bufferIndex];
             for (NSUInteger index = 0; index < kBandCount; index++) {
                 NVDSP *filter = filters[index];

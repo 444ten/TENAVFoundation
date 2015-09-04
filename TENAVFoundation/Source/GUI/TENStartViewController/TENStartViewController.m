@@ -176,17 +176,52 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 #pragma mark View Handling
 
 - (IBAction)onPlaySource:(id)sender {
-    NSURL *sourceUrl = self.sourceUrl;
+    static BOOL isPlay = NO;
     
-    NSLog(@"playSource %@", sourceUrl);
+    AVPlayer *sourcePlayer = nil;
     
-    AVPlayer *sourcePlayer = [AVPlayer playerWithURL:sourceUrl];
-    self.sourcePlayer = sourcePlayer;
-    
-    [sourcePlayer play];
-    
-    
+    if (!isPlay) {
+        NSURL *sourceUrl = self.sourceUrl;
+        
+        NSLog(@"playSource %@", sourceUrl);
+        
+        sourcePlayer = [AVPlayer playerWithURL:sourceUrl];
+        self.sourcePlayer = sourcePlayer;
+        
+        [sourcePlayer play];
+        
+        isPlay = YES;
+    } else {
+        sourcePlayer = self.sourcePlayer;
+        
+        sourcePlayer.rate = (sourcePlayer.rate > 0.0) ? 0.0 : 1.0;
+    }
 }
+
+- (IBAction)onPlayResult:(id)sender {
+    static BOOL isPlay = NO;
+    
+    AVPlayer *resultPlayer = nil;
+    
+    if (!isPlay) {
+        NSURL *outputUrl = self.outputUrl;
+        
+        NSLog(@"playResult %@", outputUrl);
+        
+        resultPlayer = [AVPlayer playerWithURL:outputUrl];
+        self.resultPlayer = resultPlayer;
+        
+        [resultPlayer play];
+        
+        isPlay = YES;
+    } else {
+        resultPlayer = self.resultPlayer;
+        
+        resultPlayer.rate = (resultPlayer.rate > 0.0) ? 0.0 : 1.0;
+    }
+}
+
+
 
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
@@ -269,16 +304,6 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     }];
 }
 
-- (IBAction)onPlayResult:(id)sender {
-    NSURL *outputUrl = self.outputUrl;
-    
-    NSLog(@"playResult %@", outputUrl);
-    
-    AVPlayer *resultPlayer = [AVPlayer playerWithURL:outputUrl];
-    self.resultPlayer = resultPlayer;
-    
-    [resultPlayer play];
-}
 
 #pragma mark -
 #pragma mark Private

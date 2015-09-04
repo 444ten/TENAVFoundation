@@ -13,6 +13,8 @@
 
 - (void)setup;
 
+- (void)update;
+
 - (void)filterAudioBuffer:(AudioBufferList *)buffer framesCount:(UInt32)framesCount;
 
 @end
