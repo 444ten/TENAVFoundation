@@ -106,7 +106,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     if (!_output) {
         AVAssetTrack *track = [[self.asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
         NSDictionary *decompressingAudioSetting = @{ AVFormatIDKey : @(kAudioFormatLinearPCM),
-                                                     AVNumberOfChannelsKey : @(1),
+                                                     AVNumberOfChannelsKey : @(2),
                                                      AVLinearPCMIsFloatKey : @(YES),
                                                      AVLinearPCMBitDepthKey : @(32),
                                                      AVLinearPCMIsNonInterleaved : @(YES)
@@ -152,7 +152,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                                    AVSampleRateKey : @44100,
                                    AVNumberOfChannelsKey : @2,
                                    AVChannelLayoutKey : channelLayoutAsData,
-                                   AVEncoderBitRateKey : @64000
+                                   AVEncoderBitRateKey : @128000
                                    };
 
         _input = [[AVAssetWriterInput alloc] initWithMediaType:AVMediaTypeAudio outputSettings:settings];
@@ -236,7 +236,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     static const float      kMaxBandGainDb  = 12.0f;
     
     float sampleRate = 44100;
-    int numberOfChanel = 1;
+    int numberOfChanel = 2;
     
     CParametricEqIf *equalizerPtr = NULL;
     
@@ -246,7 +246,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     equalizerPtr->SetParam(CParametricEqIf::kEqParamFrequency, kLowBandFreq);
     equalizerPtr->SetParam(CParametricEqIf::kEqParamQ, kLowBandQ);
     //                equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, kDefaultLow);
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, -0.7 * kMaxBandGainDb);
+    equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, 1.0 * kMaxBandGainDb);
     equalizerPtr->SetAddDenormalNoise(false);
     
     
@@ -276,7 +276,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
             
             if (sampleBuffer) {
                 uint32_t flags = kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment;
-                size_t bufferSize = sizeof(AudioBufferList);
+                size_t bufferSize = sizeof(AudioBufferList) + sizeof(AudioBuffer);
                 
                 self.audioBufferList = (AudioBufferList *)calloc(1, bufferSize);
                 
@@ -296,13 +296,24 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
   
                 AudioBufferList *audioList = self.audioBufferList;
                 
-                float *planes[1];
-//
-//                for (int channel = 0; channel < audioList->mNumberBuffers; channel++) {
-//                    planes[channel] = (float *)audioList->mBuffers[channel].mData;
-//                }
+                float *planes[audioList->mNumberBuffers];
 
-                planes[0] = (float *)audioList->mBuffers[0].mData;
+                for (int channel = 0; channel < audioList->mNumberBuffers; channel++) {
+                    planes[channel] = (float *)audioList->mBuffers[channel].mData;
+                }
+                
+                static float step = 0.5;
+                static float coefficient =  0.0;
+                static float sign = 1.0;
+                
+                
+                coefficient += sign * step;
+                
+                if (coefficient > 0.95 || coefficient < 0.05) {
+                    sign *= -1.0;
+                }
+
+                equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, coefficient * kMaxBandGainDb);
 
                 
                 equalizerPtr->Process(planes, planes, sampleCount);

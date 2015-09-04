@@ -58,27 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.mm"
-            timestampString = "463062684.161544"
+            timestampString = "463064737.307841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "-onProcess:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.mm"
-            timestampString = "463062684.161544"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
             landmarkName = "-onProcess:"
             landmarkType = "5">
          </BreakpointContent>
