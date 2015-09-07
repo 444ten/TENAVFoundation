@@ -10,9 +10,8 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "NSObject+IDPExtensions.h"
-
 #import "AEEqualizerFilter.h"
+#import "TENEqualizerFilter.h"
 
 #import "ParamEQIf.h"
 
@@ -45,7 +44,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 @property (nonatomic, assign)   CMBlockBufferRef    blockBuffer;
 @property (nonatomic, assign)   AudioBufferList     *audioBufferList;
 
-@property (nonatomic, strong)   AEEqualizerFilter   *filter;
+@property (nonatomic, strong)   id                  filter;
 
 - (NSString *)processedFileName;
 
@@ -230,27 +229,9 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
-    static const float      kDefaultLow     = 0.0f;
-    static const float      kLowBandFreq    = 300.0f;
-    static const float      kLowBandQ       = 0.6f;
-    static const float      kMaxBandGainDb  = 12.0f;
-    
-    float sampleRate = 44100;
-    int numberOfChanel = 2;
-    
-    CParametricEqIf *equalizerPtr = NULL;
-    
-    CParametricEqIf::CreateInstance(equalizerPtr, sampleRate, numberOfChanel);
-    equalizerPtr->SetBypass(false);
-    equalizerPtr->SetType(CParametricEqIf::kLShelv12);
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamFrequency, kLowBandFreq);
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamQ, kLowBandQ);
-    //                equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, kDefaultLow);
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, 1.0 * kMaxBandGainDb);
-    equalizerPtr->SetAddDenormalNoise(false);
-    
-    
-    AEEqualizerFilter *filter = [AEEqualizerFilter new];
+//    AEEqualizerFilter *filter = [AEEqualizerFilter new];
+    TENEqualizerFilter *filter = [TENEqualizerFilter new];
+
     [filter setup];
     self.filter = filter;
     
@@ -290,33 +271,10 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                                                                                           &_blockBuffer);
                 NSAssert(0 == result, @"error:_audioBufferList");
 
-                UInt32 sampleCount = (UInt32)CMSampleBufferGetNumSamples(sampleBuffer);
-//                [self.filter filterAudioBuffer:self.audioBufferList framesCount:sampleCount];
+                UInt32 framesCount = (UInt32)CMSampleBufferGetNumSamples(sampleBuffer);
 
-  
-                AudioBufferList *audioList = self.audioBufferList;
-                
-                float *planes[audioList->mNumberBuffers];
-
-                for (int channel = 0; channel < audioList->mNumberBuffers; channel++) {
-                    planes[channel] = (float *)audioList->mBuffers[channel].mData;
-                }
-                
-                static float step = 0.5;
-                static float coefficient =  0.0;
-                static float sign = 1.0;
-                
-                
-                coefficient += sign * step;
-                
-                if (coefficient > 0.95 || coefficient < 0.05) {
-                    sign *= -1.0;
-                }
-
-                equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, coefficient * kMaxBandGainDb);
-
-                
-                equalizerPtr->Process(planes, planes, sampleCount);
+//                [filter filterAudioBuffer:self.audioBufferList framesCount];
+                [filter processWithAudioBufferList:_audioBufferList framesCount:framesCount];
                 
                 CMSampleBufferSetDataBufferFromAudioBufferList(sampleBuffer,
                                                                kCFAllocatorDefault,
@@ -350,13 +308,13 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     }];
 }
 
-
 #pragma mark -
 #pragma mark Private
 
 - (NSString *)processedFileName {
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
     dateFormatter.dateFormat = kTENDateFormat;
+    
     return [NSString stringWithFormat:kTENProcessedFileNameFormat, [dateFormatter stringFromDate:[NSDate date]]];
 }
 
