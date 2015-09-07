@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.mm"
-            timestampString = "463302875.114573"
+            timestampString = "463311174.91661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "-onPlaySource:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.mm"
-            timestampString = "463302875.114573"
+            timestampString = "463311174.91661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "-onProcess:"
             landmarkType = "5">
          </BreakpointContent>
@@ -48,22 +48,6 @@
             startingLineNumber = "85"
             endingLineNumber = "85"
             landmarkName = "-filterAudioBuffer:framesCount:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TENAVFoundation/Source/GUI/TENStartViewController/TENStartViewController.mm"
-            timestampString = "463302875.114573"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "-processedFileName"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

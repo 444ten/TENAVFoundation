@@ -12,10 +12,11 @@
 
 #import "AEEqualizerFilter.h"
 #import "TENEqualizerFilter.h"
+#import "TENDelayFilter.h"
 
 #import "ParamEQIf.h"
 
-static NSString * const kTENSourceName      = @"didy";
+static NSString * const kTENSourceName      = @"test";
 //static NSString * const kTENSourceName      = @"test";
 //static NSString * const kTENSourceName      = @"lady";
 
@@ -230,7 +231,8 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 //    AEEqualizerFilter *filter = [AEEqualizerFilter new];
-    TENEqualizerFilter *filter = [TENEqualizerFilter new];
+//    TENEqualizerFilter *filter = [TENEqualizerFilter new];
+    TENDelayFilter *filter = [TENDelayFilter new];
 
     [filter setup];
     self.filter = filter;

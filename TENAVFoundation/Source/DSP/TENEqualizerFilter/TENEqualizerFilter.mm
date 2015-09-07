@@ -25,7 +25,6 @@ static const float      kMaxBandGainDb  = 12.0f;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
         float sampleRate = 44100;
         int numberOfChanel = 2;
         
