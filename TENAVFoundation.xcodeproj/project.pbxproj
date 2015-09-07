@@ -63,6 +63,7 @@
 		76FB909A1B9D70CE008AEC4D /* WADSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90981B9D70CE008AEC4D /* WADSP.m */; };
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
 		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
+		76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENEqualizerFilter.mm; sourceTree = "<group>"; };
 		76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDelayFilter.h; sourceTree = "<group>"; };
 		76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENDelayFilter.mm; sourceTree = "<group>"; };
+		76FB90A41B9DAEEB008AEC4D /* TENLPFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENLPFilter.h; sourceTree = "<group>"; };
+		76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENLPFilter.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,6 +611,7 @@
 		76FB90931B9D70CD008AEC4D /* DSP */ = {
 			isa = PBXGroup;
 			children = (
+				76FB90A31B9DAEE1008AEC4D /* TENLPFilter */,
 				76FB909F1B9D8A88008AEC4D /* TENDelayFilter */,
 				76FB909B1B9D7114008AEC4D /* TENEqualizerFilter */,
 				76FB90941B9D70CD008AEC4D /* AEEqualizerFilter */,
@@ -642,6 +646,15 @@
 				76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */,
 			);
 			path = TENDelayFilter;
+			sourceTree = "<group>";
+		};
+		76FB90A31B9DAEE1008AEC4D /* TENLPFilter */ = {
+			isa = PBXGroup;
+			children = (
+				76FB90A41B9DAEEB008AEC4D /* TENLPFilter.h */,
+				76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */,
+			);
+			path = TENLPFilter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -768,6 +781,7 @@
 				76138ACA1B98600A00E03BF5 /* README.md in Sources */,
 				76138AC51B98600A00E03BF5 /* NVLowShelvingFilter.m in Sources */,
 				76138AC01B98600A00E03BF5 /* NVBandpassFilter.m in Sources */,
+				76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
