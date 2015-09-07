@@ -62,6 +62,7 @@
 		76FB90991B9D70CE008AEC4D /* AEEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90961B9D70CE008AEC4D /* AEEqualizerFilter.mm */; };
 		76FB909A1B9D70CE008AEC4D /* WADSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90981B9D70CE008AEC4D /* WADSP.m */; };
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
+		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,8 @@
 		76FB90981B9D70CE008AEC4D /* WADSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADSP.m; sourceTree = "<group>"; };
 		76FB909C1B9D7140008AEC4D /* TENEqualizerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENEqualizerFilter.h; sourceTree = "<group>"; };
 		76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENEqualizerFilter.mm; sourceTree = "<group>"; };
+		76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDelayFilter.h; sourceTree = "<group>"; };
+		76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENDelayFilter.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +608,7 @@
 		76FB90931B9D70CD008AEC4D /* DSP */ = {
 			isa = PBXGroup;
 			children = (
+				76FB909F1B9D8A88008AEC4D /* TENDelayFilter */,
 				76FB909B1B9D7114008AEC4D /* TENEqualizerFilter */,
 				76FB90941B9D70CD008AEC4D /* AEEqualizerFilter */,
 			);
@@ -629,6 +633,15 @@
 				76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */,
 			);
 			path = TENEqualizerFilter;
+			sourceTree = "<group>";
+		};
+		76FB909F1B9D8A88008AEC4D /* TENDelayFilter */ = {
+			isa = PBXGroup;
+			children = (
+				76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */,
+				76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */,
+			);
+			path = TENDelayFilter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -738,6 +751,7 @@
 				762209641B9075C5000E2B9C /* TENStartViewController.mm in Sources */,
 				7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */,
 				76138ABF1B98600A00E03BF5 /* NVAllpassFilter.m in Sources */,
+				76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */,
 				76138AC61B98600A00E03BF5 /* NVNotchFilter.m in Sources */,
 				76138AC91B98600A00E03BF5 /* NVDSP.mm in Sources */,
 				76138AC71B98600A00E03BF5 /* NVPeakingEQFilter.m in Sources */,
