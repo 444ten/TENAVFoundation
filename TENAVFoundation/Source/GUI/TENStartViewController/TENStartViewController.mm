@@ -234,8 +234,8 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 //    AEEqualizerFilter *filter = [AEEqualizerFilter new];
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
-//    TENDelayFilter *filter = [TENDelayFilter new];
-    TENLPFilter *filter = [TENLPFilter new];
+    TENDelayFilter *filter = [TENDelayFilter new];
+//    TENLPFilter *filter = [TENLPFilter new];
 
     [filter setup];
     self.filter = filter;

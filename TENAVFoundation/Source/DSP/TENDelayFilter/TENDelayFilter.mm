@@ -11,6 +11,7 @@
 #import "DelayIf.h"
 
 static CDelayIf *delayPtr;
+static zfxError_t zfxError;
 
 @implementation TENDelayFilter
 
@@ -23,8 +24,9 @@ static CDelayIf *delayPtr;
         float sampleRate = 44100;
         int numberOfChanel = 2;
         
-        CDelayIf::CreateInstance(delayPtr, sampleRate, numberOfChanel);
-
+        zfxError = CDelayIf::CreateInstance(delayPtr, sampleRate, numberOfChanel);
+        NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+        
 //        delayPtr->SetBypass(true);
 //        delayPtr->SetBypass(false);
 //        
@@ -59,7 +61,8 @@ static CDelayIf *delayPtr;
 #pragma mark Public
 
 - (void)setup {
-    delayPtr->SetParam(CDelayIf::kDelParamDelayInS, 0.0);
+    zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, 0.0);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 - (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount {
@@ -72,8 +75,8 @@ static CDelayIf *delayPtr;
     }
     
     [self update];
-    zfxError_t succes = delayPtr->Process(planes, planes, framesCount);
-
+    zfxError = delayPtr->Process(planes, planes, framesCount);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 - (void)update {
@@ -87,7 +90,9 @@ static CDelayIf *delayPtr;
         sign *= -1.0;
     }
     
-    delayPtr->SetParam(CDelayIf::kDelParamDelayInS, coefficient);
+    zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, coefficient);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+
 }
 
 @end
