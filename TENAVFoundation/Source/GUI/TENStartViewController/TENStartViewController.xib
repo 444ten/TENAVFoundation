@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
@@ -14,26 +15,54 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-Sh-RZ4">
-                    <rect key="frame" x="162" y="95" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-bT-7CV">
+                    <rect key="frame" x="272" y="285" width="56" height="30"/>
+                    <state key="normal" title="Process">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onProcess:" destination="-1" eventType="touchUpInside" id="YYL-rE-8CS"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-bT-7CV">
-                    <rect key="frame" x="162" y="174" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-dL-FDS">
+                    <rect key="frame" x="261" y="375" width="77" height="30"/>
+                    <state key="normal" title="Play Result">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onPlayResult:" destination="-1" eventType="touchUpInside" id="8O9-ej-6A4"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ux-dL-FDS">
-                    <rect key="frame" x="162" y="275" width="46" height="30"/>
-                    <state key="normal" title="Button">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-Sh-RZ4">
+                    <rect key="frame" x="259" y="195" width="82" height="30"/>
+                    <state key="normal" title="Play Source">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onPlaySource:" destination="-1" eventType="touchUpInside" id="SSN-oL-FAo"/>
+                    </connections>
                 </button>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-Zt-Yam">
+                    <rect key="frame" x="38" y="233" width="524" height="31"/>
+                    <connections>
+                        <action selector="onSourceVolumeSliderValueChanged:" destination="-1" eventType="valueChanged" id="iT8-in-GV2"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RZ7-Zt-Yam" secondAttribute="trailing" constant="40" id="3h0-cq-sCG"/>
+                <constraint firstAttribute="centerX" secondItem="OJb-bT-7CV" secondAttribute="centerX" id="60f-bJ-hfm"/>
+                <constraint firstItem="RZ7-Zt-Yam" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="JIG-jE-NHV"/>
+                <constraint firstAttribute="centerX" secondItem="RZ7-Zt-Yam" secondAttribute="centerX" id="RzF-MZ-VVZ"/>
+                <constraint firstAttribute="centerX" secondItem="kkO-Sh-RZ4" secondAttribute="centerX" id="SAk-H0-Yv9"/>
+                <constraint firstAttribute="centerX" secondItem="2Ux-dL-FDS" secondAttribute="centerX" id="TlA-5z-Yjz"/>
+                <constraint firstAttribute="centerY" secondItem="OJb-bT-7CV" secondAttribute="centerY" id="cPF-1a-c9e"/>
+                <constraint firstItem="RZ7-Zt-Yam" firstAttribute="top" secondItem="kkO-Sh-RZ4" secondAttribute="bottom" constant="8" id="fh4-UT-Rgu"/>
+                <constraint firstItem="OJb-bT-7CV" firstAttribute="top" secondItem="kkO-Sh-RZ4" secondAttribute="bottom" constant="60" id="gWe-i5-L49"/>
+                <constraint firstItem="2Ux-dL-FDS" firstAttribute="top" secondItem="OJb-bT-7CV" secondAttribute="bottom" constant="60" id="yIa-w7-ZOv"/>
+            </constraints>
+            <point key="canvasLocation" x="207" y="401"/>
         </view>
     </objects>
 </document>

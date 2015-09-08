@@ -10,4 +10,10 @@
 
 @interface TENStartViewController : UIViewController
 
+- (IBAction)onPlaySource:(id)sender;
+- (IBAction)onProcess:(id)sender;
+- (IBAction)onPlayResult:(id)sender;
+
+- (IBAction)onSourceVolumeSliderValueChanged:(UISlider *)sender;
+
 @end
