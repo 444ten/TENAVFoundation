@@ -64,6 +64,7 @@
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
 		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
 		76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */; };
+		76FB90A81B9DBB4B008AEC4D /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76FB90A71B9DBB4B008AEC4D /* klss.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENDelayFilter.mm; sourceTree = "<group>"; };
 		76FB90A41B9DAEEB008AEC4D /* TENLPFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENLPFilter.h; sourceTree = "<group>"; };
 		76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENLPFilter.mm; sourceTree = "<group>"; };
+		76FB90A71B9DBB4B008AEC4D /* klss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = klss.mp3; path = ../../../../Desktop/klss.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -603,6 +605,7 @@
 				762209671B907E06000E2B9C /* test.mp3 */,
 				76138B2E1B998C4100E03BF5 /* didy.mp3 */,
 				769DC1541B95D57600739040 /* lady.mp3 */,
+				76FB90A71B9DBB4B008AEC4D /* klss.mp3 */,
 			);
 			name = Music;
 			path = TENAVFoundation/Music;
@@ -740,6 +743,7 @@
 				762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */,
 				762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */,
 				769DC1551B95D57600739040 /* lady.mp3 in Resources */,
+				76FB90A81B9DBB4B008AEC4D /* klss.mp3 in Resources */,
 				76138AC81B98600A00E03BF5 /* license.txt in Resources */,
 				762209681B907E06000E2B9C /* test.mp3 in Resources */,
 				762209461B9074ED000E2B9C /* Images.xcassets in Resources */,

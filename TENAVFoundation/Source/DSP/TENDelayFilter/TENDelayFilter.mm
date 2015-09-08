@@ -25,21 +25,19 @@ static CDelayIf *delayPtr;
         
         CDelayIf::CreateInstance(delayPtr, sampleRate, numberOfChanel);
 
-        
-        
-        delayPtr->SetBypass(true);
-        delayPtr->SetBypass(false);
-        
-        delayPtr->SetLfoType(kNoLfo);
-        
-        delayPtr->SetParam(CDelayIf::kDelParamLfoDepthRel, 0.0);
-        delayPtr->SetParam(CDelayIf::kDelParamLfoFreqInHz,0.1);
-        delayPtr->SetParam(CDelayIf::kDelParamFeedbackRel, 0.0);
-        delayPtr->SetParam(CDelayIf::kDelParamBlendRel, 0.707);
-        delayPtr->SetParam(CDelayIf::kDelParamFeedForwardRel, 0.707);
-        delayPtr->SetParam(CDelayIf::kDelParamLpInFeedbackRel, 0.2);
-        delayPtr->SetParam(CDelayIf::kDelParamStereoFadeRel, 0.3);
-        delayPtr->SetParam(CDelayIf::kDelParamWetnessRel, 1.0);
+//        delayPtr->SetBypass(true);
+//        delayPtr->SetBypass(false);
+//        
+//        delayPtr->SetLfoType(kNoLfo);
+//        
+//        delayPtr->SetParam(CDelayIf::kDelParamLfoDepthRel, 0.0);
+//        delayPtr->SetParam(CDelayIf::kDelParamLfoFreqInHz,0.1);
+//        delayPtr->SetParam(CDelayIf::kDelParamFeedbackRel, 0.0);
+//        delayPtr->SetParam(CDelayIf::kDelParamBlendRel, 0.707);
+//        delayPtr->SetParam(CDelayIf::kDelParamFeedForwardRel, 0.707);
+//        delayPtr->SetParam(CDelayIf::kDelParamLpInFeedbackRel, 0.2);
+//        delayPtr->SetParam(CDelayIf::kDelParamStereoFadeRel, 0.3);
+//        delayPtr->SetParam(CDelayIf::kDelParamWetnessRel, 1.0);
 
 //        kDelParamLfoDepthRel,   //!< modulation range in relation to current delay, (0...1) leads to (0s...2*delaytime)
 //        kDelParamLfoFreqInHz,   //!< modulation frequency
@@ -74,8 +72,7 @@ static CDelayIf *delayPtr;
     }
     
     [self update];
-    
-    delayPtr->Process(planes, planes, framesCount);
+    zfxError_t succes = delayPtr->Process(planes, planes, framesCount);
 
 }
 
