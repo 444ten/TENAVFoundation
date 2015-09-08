@@ -13,6 +13,11 @@
 static CDelayIf *delayPtr;
 static zfxError_t zfxError;
 
+@interface TENDelayFilter ()
+@property (nonatomic, assign)   float   volumeScale;
+
+@end
+
 @implementation TENDelayFilter
 
 #pragma mark -
@@ -23,6 +28,8 @@ static zfxError_t zfxError;
     if (self) {
         float sampleRate = 44100;
         int numberOfChanel = 2;
+        
+        self.volumeScale = 0.2;
         
         zfxError = CDelayIf::CreateInstance(delayPtr, sampleRate, numberOfChanel);
         NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
@@ -71,7 +78,15 @@ static zfxError_t zfxError;
     float *planes[channelsCount];
     
     for (UInt32 channel = 0; channel < channelsCount; channel++) {
-        planes[channel] = (float *)audioBufferList->mBuffers[channel].mData;
+        float *channelBuffer = (float *)audioBufferList->mBuffers[channel].mData;
+        
+        planes[channel] = channelBuffer;
+        
+        for (int jj = 0; jj < framesCount; ++ jj) {
+            *channelBuffer = *channelBuffer * _volumeScale;
+            channelBuffer++;
+        }
+        
     }
     
     [self update];
@@ -79,20 +94,21 @@ static zfxError_t zfxError;
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
+
 - (void)update {
-    static float step = 0.20;
+    static float step = 0.01;
     static float coefficient =  0.0;
     static float sign = 1.0;
     
     static NSUInteger count = 0;
     
-    if (count < 50) {
+    if (count < 100) {
         count++;
-        
-        return;
+    } else {
+        _volumeScale += 0.3;
+        count = 0;
     }
     
-    count = 0;
     
     coefficient += sign * step;
     
@@ -100,10 +116,11 @@ static zfxError_t zfxError;
         sign *= -1.0;
     }
     
-    NSLog(@"-- %f",coefficient);
+//    NSLog(@"-- %f",coefficient);
     
     zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, coefficient);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
+
 
 @end

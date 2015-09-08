@@ -227,6 +227,9 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     }
 }
 
+- (IBAction)onSourceVolumeSliderValueChanged:(UISlider *)sender {
+    self.sourcePlayer.volume = sender.value;
+}
 
 
 - (IBAction)onProcess:(id)sender {
@@ -305,6 +308,8 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                 [input markAsFinished];
                 [writer finishWritingWithCompletionHandler:^{
                     NSLog(@"finish");
+                    
+                    [self onPlayResult:nil];
                 }];
                 
                 break;
