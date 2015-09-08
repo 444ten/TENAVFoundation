@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface TENNVDSPLPFilter : NSObject
+
+- (void)setup;
+
+- (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount;
+
+- (void)update;
+
 
 @end

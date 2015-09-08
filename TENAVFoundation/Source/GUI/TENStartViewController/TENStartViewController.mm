@@ -11,6 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 #import "AEEqualizerFilter.h"
+#import "TENNVDSPLPFilter.h"
 #import "TENEqualizerFilter.h"
 #import "TENDelayFilter.h"
 #import "TENLPFilter.h"
@@ -237,9 +238,10 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 //    AEEqualizerFilter *filter = [AEEqualizerFilter new];
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
-    TENDelayFilter *filter = [TENDelayFilter new];
+//    TENDelayFilter *filter = [TENDelayFilter new];
 //    TENLPFilter *filter = [TENLPFilter new];
-
+    TENNVDSPLPFilter *filter = [TENNVDSPLPFilter new];
+    
     [filter setup];
     self.filter = filter;
     
