@@ -80,9 +80,19 @@ static zfxError_t zfxError;
 }
 
 - (void)update {
-    static float step = 0.01;
+    static float step = 0.20;
     static float coefficient =  0.0;
     static float sign = 1.0;
+    
+    static NSUInteger count = 0;
+    
+    if (count < 50) {
+        count++;
+        
+        return;
+    }
+    
+    count = 0;
     
     coefficient += sign * step;
     
@@ -90,9 +100,10 @@ static zfxError_t zfxError;
         sign *= -1.0;
     }
     
+    NSLog(@"-- %f",coefficient);
+    
     zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, coefficient);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-
 }
 
 @end
