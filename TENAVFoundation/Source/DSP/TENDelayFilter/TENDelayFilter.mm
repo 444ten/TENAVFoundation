@@ -11,7 +11,7 @@
 #import "DelayIf.h"
 
 static CDelayIf *delayPtr;
-static zfxError_t zfxError;
+static NSUInteger zfxError;
 
 @interface TENDelayFilter ()
 @property (nonatomic, assign)   float   volumeScale;
@@ -32,22 +32,7 @@ static zfxError_t zfxError;
         self.volumeScale = 0.2;
         
         zfxError = CDelayIf::CreateInstance(delayPtr, sampleRate, numberOfChanel);
-        NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
         
-//        delayPtr->SetBypass(true);
-//        delayPtr->SetBypass(false);
-//        
-//        delayPtr->SetLfoType(kNoLfo);
-//        
-//        delayPtr->SetParam(CDelayIf::kDelParamLfoDepthRel, 0.0);
-//        delayPtr->SetParam(CDelayIf::kDelParamLfoFreqInHz,0.1);
-//        delayPtr->SetParam(CDelayIf::kDelParamFeedbackRel, 0.0);
-//        delayPtr->SetParam(CDelayIf::kDelParamBlendRel, 0.707);
-//        delayPtr->SetParam(CDelayIf::kDelParamFeedForwardRel, 0.707);
-//        delayPtr->SetParam(CDelayIf::kDelParamLpInFeedbackRel, 0.2);
-//        delayPtr->SetParam(CDelayIf::kDelParamStereoFadeRel, 0.3);
-//        delayPtr->SetParam(CDelayIf::kDelParamWetnessRel, 1.0);
-
 //        kDelParamLfoDepthRel,   //!< modulation range in relation to current delay, (0...1) leads to (0s...2*delaytime)
 //        kDelParamLfoFreqInHz,   //!< modulation frequency
 //        kDelParamFeedbackRel,   //!< amount of feedback (0...0.9999)
@@ -56,8 +41,21 @@ static zfxError_t zfxError;
 //        kDelParamLpInFeedbackRel, //!< low pass amount in feedback path (0...0.9999)
 //        kDelParamStereoFadeRel, //!< amount of cross feedback between channels (0...1)
 //        kDelParamWetnessRel,    //!< amount of wetness (0...1), (this is closely related to blend)
-
 //        kDelParamDelayInS,      //!< mean delay (0...fMaxDelay in CreateInstance)
+        
+        zfxError += delayPtr->SetBypass(false);
+        zfxError += delayPtr->SetLfoType(kNoLfo);
+        
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamLfoDepthRel, 0.0);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamLfoFreqInHz,0.1);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamFeedbackRel, 0.0);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamBlendRel, 0.707);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamFeedForwardRel, 0.707);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamLpInFeedbackRel, 0.2);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamStereoFadeRel, 0.3);
+        zfxError += delayPtr->SetParam(CDelayIf::kDelParamWetnessRel, 1.0);
+        
+        NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));        
     }
     
     return self;
@@ -82,10 +80,10 @@ static zfxError_t zfxError;
         
         planes[channel] = channelBuffer;
         
-        for (int jj = 0; jj < framesCount; ++ jj) {
-            *channelBuffer = *channelBuffer * _volumeScale;
-            channelBuffer++;
-        }
+//        for (int jj = 0; jj < framesCount; ++ jj) {
+//            *channelBuffer = *channelBuffer * _volumeScale;
+//            channelBuffer++;
+//        }
         
     }
     
