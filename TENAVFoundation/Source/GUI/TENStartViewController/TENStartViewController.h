@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TENStartViewController : UIViewController
+@property (nonatomic, strong)   IBOutlet UIButton   *processButton;
 @property (nonatomic, strong)   IBOutlet UIButton   *playResultButton;
 
 - (IBAction)onPlaySource:(id)sender;

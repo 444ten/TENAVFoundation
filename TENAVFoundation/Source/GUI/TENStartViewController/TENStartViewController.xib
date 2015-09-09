@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TENStartViewController">
             <connections>
                 <outlet property="playResultButton" destination="2Ux-dL-FDS" id="364-YX-B1k"/>
+                <outlet property="processButton" destination="OJb-bT-7CV" id="IoT-nT-oyn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,7 +35,7 @@
                         <action selector="onPlayResult:" destination="-1" eventType="touchUpInside" id="8O9-ej-6A4"/>
                     </connections>
                 </button>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-Zt-Yam">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="RZ7-Zt-Yam">
                     <rect key="frame" x="37" y="514" width="524" height="31"/>
                     <connections>
                         <action selector="onSourceVolumeSliderValueChanged:" destination="-1" eventType="valueChanged" id="iT8-in-GV2"/>

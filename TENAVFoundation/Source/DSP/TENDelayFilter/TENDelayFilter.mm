@@ -61,7 +61,6 @@ static NSUInteger zfxError;
     return self;
 }
 
-
 #pragma mark -
 #pragma mark Public
 
@@ -77,14 +76,7 @@ static NSUInteger zfxError;
     
     for (UInt32 channel = 0; channel < channelsCount; channel++) {
         float *channelBuffer = (float *)audioBufferList->mBuffers[channel].mData;
-        
         planes[channel] = channelBuffer;
-        
-//        for (int jj = 0; jj < framesCount; ++ jj) {
-//            *channelBuffer = *channelBuffer * _volumeScale;
-//            channelBuffer++;
-//        }
-        
     }
     
     [self update];
@@ -92,33 +84,22 @@ static NSUInteger zfxError;
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
-
 - (void)update {
     static float step = 0.01;
-    static float coefficient =  0.0;
+    static float delayInS = 0.0;
+
     static float sign = 1.0;
     
-    static NSUInteger count = 0;
+    delayInS += sign * step;
     
-    if (count < 100) {
-        count++;
-    } else {
-        _volumeScale += 0.3;
-        count = 0;
-    }
-    
-    
-    coefficient += sign * step;
-    
-    if (coefficient > 0.999 || coefficient < 0.001) {
+    if (delayInS >= 1.0 || delayInS < step) {
         sign *= -1.0;
     }
+
+//    NSLog(@"-- %f",delayInS);
     
-//    NSLog(@"-- %f",coefficient);
-    
-    zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, coefficient);
+    zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, delayInS);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
-
 
 @end

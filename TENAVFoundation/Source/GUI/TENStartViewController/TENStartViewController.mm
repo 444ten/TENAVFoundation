@@ -309,6 +309,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 #pragma mark Private
 
 - (void)playResult {
+    self.processButton.enabled = NO;
     self.playResultButton.enabled = YES;
     [self onPlayResult:nil];
 }
