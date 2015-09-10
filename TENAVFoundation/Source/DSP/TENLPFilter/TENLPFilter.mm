@@ -33,7 +33,7 @@ static CResonanceFilterIf *lpPtr;
 #pragma mark Public
 
 - (void)setup {
-    lpPtr->SetParam(CResonanceFilterIf::kRFilterParamFrequencyInHz, 200);
+
 }
 
 - (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount {
@@ -51,17 +51,17 @@ static CResonanceFilterIf *lpPtr;
 }
 
 - (void)update {
-    static float step = 400;
-    static float coefficient =  200;
+    static float step = 500;
+    static float coefficient = 1000;
     static float sign = 1.0;
     
     coefficient += sign * step;
     
-    if (coefficient >= 4000 || coefficient <= 200) {
+    if (coefficient >= 4000 || coefficient <= 1000) {
         sign *= -1.0;
     }
     
-//    NSLog(@"%f", coefficient);
+    NSLog(@"zPlane lp frequency %f", coefficient);
     
     lpPtr->SetParam(CResonanceFilterIf::kRFilterParamFrequencyInHz, coefficient);
 }

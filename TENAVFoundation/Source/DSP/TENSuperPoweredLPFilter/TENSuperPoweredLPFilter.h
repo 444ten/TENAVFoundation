@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface TENSuperPoweredLPFilter : NSObject
+
+- (void)setup;
+
+- (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount;
+
+- (void)update;
 
 @end
