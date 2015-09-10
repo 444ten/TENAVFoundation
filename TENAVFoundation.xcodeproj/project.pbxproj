@@ -46,6 +46,7 @@
 		762209681B907E06000E2B9C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 762209671B907E06000E2B9C /* test.mp3 */; };
 		769DC1551B95D57600739040 /* lady.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769DC1541B95D57600739040 /* lady.mp3 */; };
 		76F574301B9F209F009B1166 /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76F5742F1B9F209F009B1166 /* klss.mp3 */; };
+		76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */; };
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
 		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
 		76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */; };
@@ -121,6 +122,9 @@
 		762209671B907E06000E2B9C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		769DC1541B95D57600739040 /* lady.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lady.mp3; sourceTree = "<group>"; };
 		76F5742F1B9F209F009B1166 /* klss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = klss.mp3; sourceTree = "<group>"; };
+		76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperpoweredAudio.a; sourceTree = "<group>"; };
+		76F574371BA1682D009B1166 /* Superpowered3BandEQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Superpowered3BandEQ.h; sourceTree = "<group>"; };
+		76F574441BA1682D009B1166 /* SuperpoweredFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFX.h; sourceTree = "<group>"; };
 		76FB909C1B9D7140008AEC4D /* TENEqualizerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENEqualizerFilter.h; sourceTree = "<group>"; };
 		76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENEqualizerFilter.mm; sourceTree = "<group>"; };
 		76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDelayFilter.h; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 				76138B7C1B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */,
 				76138B881B99A44D00E03BF5 /* libResample.a in Frameworks */,
 				76138B821B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
+				76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */,
 				76138B781B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76138B801B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 			);
@@ -417,8 +422,9 @@
 		7622092C1B9074ED000E2B9C = {
 			isa = PBXGroup;
 			children = (
-				76138B8D1B99A62900E03BF5 /* CoreMedia.framework */,
 				76138B8B1B99A61500E03BF5 /* AVFoundation.framework */,
+				76138B8D1B99A62900E03BF5 /* CoreMedia.framework */,
+				76F574311BA167F0009B1166 /* superPowered */,
 				76138B301B99A44D00E03BF5 /* zplane */,
 				762209661B907DF4000E2B9C /* Music */,
 				7622095E1B907598000E2B9C /* Source */,
@@ -515,9 +521,35 @@
 			path = TENAVFoundation/Music;
 			sourceTree = "<group>";
 		};
+		76F574311BA167F0009B1166 /* superPowered */ = {
+			isa = PBXGroup;
+			children = (
+				76F574321BA1682D009B1166 /* Superpowered */,
+			);
+			path = superPowered;
+			sourceTree = "<group>";
+		};
+		76F574321BA1682D009B1166 /* Superpowered */ = {
+			isa = PBXGroup;
+			children = (
+				76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */,
+				76F574371BA1682D009B1166 /* Superpowered3BandEQ.h */,
+				76F574441BA1682D009B1166 /* SuperpoweredFX.h */,
+			);
+			path = Superpowered;
+			sourceTree = "<group>";
+		};
+		76F574591BA16A43009B1166 /* TENSuperPoweredEQFiter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TENSuperPoweredEQFiter;
+			sourceTree = "<group>";
+		};
 		76FB90931B9D70CD008AEC4D /* DSP */ = {
 			isa = PBXGroup;
 			children = (
+				76F574591BA16A43009B1166 /* TENSuperPoweredEQFiter */,
 				76FB90A31B9DAEE1008AEC4D /* TENLPFilter */,
 				76FB909F1B9D8A88008AEC4D /* TENDelayFilter */,
 				76FB909B1B9D7114008AEC4D /* TENEqualizerFilter */,
@@ -790,6 +822,7 @@
 					"$(PROJECT_DIR)/zplane/auftakt/lib/ios/$(PLATFORM_NAME)",
 					"$(PROJECT_DIR)/zplane/elastique/lib/ios/$(PLATFORM_NAME)",
 					"$(PROJECT_DIR)/zplane/fxpack/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/superPowered/Superpowered",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -808,6 +841,7 @@
 					"$(PROJECT_DIR)/zplane/auftakt/lib/ios/$(PLATFORM_NAME)",
 					"$(PROJECT_DIR)/zplane/elastique/lib/ios/$(PLATFORM_NAME)",
 					"$(PROJECT_DIR)/zplane/fxpack/lib/ios/$(PLATFORM_NAME)",
+					"$(PROJECT_DIR)/superPowered/Superpowered",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
