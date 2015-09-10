@@ -29,7 +29,6 @@ static CResonanceFilterIf *lpPtr;
     return self;
 }
 
-
 #pragma mark -
 #pragma mark Public
 

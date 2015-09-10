@@ -10,13 +10,9 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-#import "AEEqualizerFilter.h"
-#import "TENNVDSPLPFilter.h"
 #import "TENEqualizerFilter.h"
 #import "TENDelayFilter.h"
 #import "TENLPFilter.h"
-
-#import "ParamEQIf.h"
 
 //static NSString * const kTENSourceName      = @"didy";
 //static NSString * const kTENSourceName      = @"test";
@@ -40,29 +36,22 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 @property (nonatomic, strong)   AVAssetReader               *reader;
 @property (nonatomic, strong)   AVAssetReaderTrackOutput    *output;
 
-@property (nonatomic, strong)   AVAssetWriter       *writer;
-@property (nonatomic, strong)   AVAssetWriterInput  *input;
+@property (nonatomic, strong)   AVAssetWriter               *writer;
+@property (nonatomic, strong)   AVAssetWriterInput          *input;
 
-@property (nonatomic, strong)   dispatch_queue_t    mediaInputQueue;
+@property (nonatomic, strong)   dispatch_queue_t            mediaInputQueue;
 
-@property (nonatomic, assign)   CMBlockBufferRef    blockBuffer;
-@property (nonatomic, assign)   AudioBufferList     *audioBufferList;
+@property (nonatomic, assign)   CMBlockBufferRef            blockBuffer;
+@property (nonatomic, assign)   AudioBufferList             *audioBufferList;
 
-@property (nonatomic, strong)   id                  filter;
+@property (nonatomic, strong)   id                          filter;
 
 - (NSString *)processedFileName;
+- (void)playResult;
 
 @end
 
 @implementation TENStartViewController
-
-#pragma mark -
-#pragma mark View Controller Life Cycle
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
 
 #pragma mark -
 #pragma mark Accessors
@@ -230,17 +219,15 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 - (IBAction)onSourceVolumeSliderValueChanged:(UISlider *)sender {
     self.sourcePlayer.volume = sender.value;
+    self.resultPlayer.volume = sender.value;
 }
-
 
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
-//    AEEqualizerFilter *filter = [AEEqualizerFilter new];
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
-//    TENDelayFilter *filter = [TENDelayFilter new];
+    TENDelayFilter *filter = [TENDelayFilter new];
 //    TENLPFilter *filter = [TENLPFilter new];
-    TENNVDSPLPFilter *filter = [TENNVDSPLPFilter new];
     
     [filter setup];
     self.filter = filter;
@@ -283,7 +270,6 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
                 UInt32 framesCount = (UInt32)CMSampleBufferGetNumSamples(sampleBuffer);
 
-//                [filter filterAudioBuffer:self.audioBufferList framesCount];
                 [filter processWithAudioBufferList:_audioBufferList framesCount:framesCount];
                 
                 CMSampleBufferSetDataBufferFromAudioBufferList(sampleBuffer,
@@ -310,8 +296,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                 [input markAsFinished];
                 [writer finishWritingWithCompletionHandler:^{
                     NSLog(@"finish");
-                    
-                    [self onPlayResult:nil];
+                    [self performSelectorOnMainThread:@selector(playResult) withObject:nil waitUntilDone:NO];
                 }];
                 
                 break;
@@ -322,6 +307,12 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 
 #pragma mark -
 #pragma mark Private
+
+- (void)playResult {
+    self.processButton.enabled = NO;
+    self.playResultButton.enabled = YES;
+    [self onPlayResult:nil];
+}
 
 - (NSString *)processedFileName {
     NSDateFormatter *dateFormatter = [NSDateFormatter new];
