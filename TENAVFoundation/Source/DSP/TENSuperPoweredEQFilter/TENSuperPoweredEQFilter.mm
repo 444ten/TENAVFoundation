@@ -44,14 +44,14 @@ static Superpowered3BandEQ *eqFilterPtr;
 }
 
 - (void)update {
-    static float step = 0.5;
+    static float step = 1.0;
     static float gain = 1.0;
     
     static float sign = 1.0;
     
     gain += sign * step;
     
-    if (gain >= 2.0 || gain < step * 2) {
+    if (gain >= 3.0 || gain < step) {
         sign *= -1.0;
     }
     
