@@ -1,18 +1,18 @@
 //
-//  TENSuperPoweredEQFilter.m
+//  TENSuperPoweredEchoFilter.m
 //  TENAVFoundation
 //
 //  Created by 444ten on 9/10/15.
 //  Copyright (c) 2015 444ten. All rights reserved.
 //
 
-#import "TENSuperPoweredEQFilter.h"
+#import "TENSuperPoweredEchoFilter.h"
 
-#import "Superpowered3BandEQ.h"
+#import "SuperpoweredEcho.h"
 
-static Superpowered3BandEQ *eqFilterPtr;
+static SuperpoweredEcho *echoFilterPtr;
 
-@implementation TENSuperPoweredEQFilter
+@implementation TENSuperPoweredEchoFilter
 
 #pragma mark -
 #pragma mark Initializations and Deallocations
@@ -20,7 +20,7 @@ static Superpowered3BandEQ *eqFilterPtr;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        eqFilterPtr = new Superpowered3BandEQ(44100);
+        echoFilterPtr = new SuperpoweredEcho(44100);
     }
     
     return self;
@@ -30,22 +30,28 @@ static Superpowered3BandEQ *eqFilterPtr;
 #pragma mark Public
 
 - (void)setup {
-    eqFilterPtr->enable(YES);
+    echoFilterPtr->enable(YES);
+    
+    echoFilterPtr->bpm = 256.0;
+    echoFilterPtr->beats = 0.125;
+    echoFilterPtr->decay = 1.0;
+    
+    echoFilterPtr->setMix(1.0);
 }
 
 - (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount {
     NSAssert(1 == audioBufferList->mNumberBuffers,
              @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-
-    [self update];
+    
+//    [self update];
     
     float *buffer = (float *)audioBufferList->mBuffers[0].mData;
     
-    NSLog(@"eq %f", *buffer);
+    NSLog(@"%f", *buffer);
     
-    eqFilterPtr->process(buffer, buffer, framesCount);
+    echoFilterPtr->process(buffer, buffer, framesCount);
     
-    NSLog(@"eq ** %f", *buffer);
+    NSLog(@"-- %f", *buffer);
 
 }
 
@@ -63,7 +69,7 @@ static Superpowered3BandEQ *eqFilterPtr;
     
     NSLog(@"%f", gain);
     
-    eqFilterPtr->bands[0] = gain;
+//    echoFilterPtr->bands[0] = gain;
 }
 
 @end

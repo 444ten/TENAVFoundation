@@ -48,7 +48,7 @@
 		76F574301B9F209F009B1166 /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76F5742F1B9F209F009B1166 /* klss.mp3 */; };
 		76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */; };
 		76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F5745C1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm */; };
-		76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.m */; };
+		76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */; };
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
 		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
 		76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */; };
@@ -131,7 +131,7 @@
 		76F5745C1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENSuperPoweredEQFilter.mm; sourceTree = "<group>"; };
 		76F5745E1BA18531009B1166 /* SuperpoweredEcho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredEcho.h; sourceTree = "<group>"; };
 		76F574601BA185B0009B1166 /* TENSuperPoweredEchoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENSuperPoweredEchoFilter.h; sourceTree = "<group>"; };
-		76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TENSuperPoweredEchoFilter.m; sourceTree = "<group>"; };
+		76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENSuperPoweredEchoFilter.mm; sourceTree = "<group>"; };
 		76FB909C1B9D7140008AEC4D /* TENEqualizerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENEqualizerFilter.h; sourceTree = "<group>"; };
 		76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENEqualizerFilter.mm; sourceTree = "<group>"; };
 		76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDelayFilter.h; sourceTree = "<group>"; };
@@ -560,7 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				76F574601BA185B0009B1166 /* TENSuperPoweredEchoFilter.h */,
-				76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.m */,
+				76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */,
 			);
 			path = TENSuperPoweredEchoFilter;
 			sourceTree = "<group>";
@@ -715,7 +715,7 @@
 				7622093B1B9074ED000E2B9C /* main.m in Sources */,
 				76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */,
 				76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */,
-				76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.m in Sources */,
+				76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
