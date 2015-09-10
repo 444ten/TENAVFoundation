@@ -31,12 +31,13 @@ static SuperpoweredEcho *echoFilterPtr;
 
 - (void)setup {
     echoFilterPtr->enable(YES);
+
+    echoFilterPtr->setMix(1.0);
     
     echoFilterPtr->bpm = 256.0;
     echoFilterPtr->beats = 0.125;
     echoFilterPtr->decay = 1.0;
     
-    echoFilterPtr->setMix(1.0);
 }
 
 - (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount {
@@ -47,11 +48,11 @@ static SuperpoweredEcho *echoFilterPtr;
     
     float *buffer = (float *)audioBufferList->mBuffers[0].mData;
     
-    NSLog(@"%f", *buffer);
+    NSLog(@"echo %f", *buffer);
     
     echoFilterPtr->process(buffer, buffer, framesCount);
     
-    NSLog(@"-- %f", *buffer);
+    NSLog(@"echo ** %f", *buffer);
 
 }
 

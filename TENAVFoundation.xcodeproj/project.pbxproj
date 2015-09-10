@@ -49,6 +49,7 @@
 		76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */; };
 		76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F5745C1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm */; };
 		76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */; };
+		76F574671BA1A588009B1166 /* TENSuperPoweredLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F574661BA1A588009B1166 /* TENSuperPoweredLPFilter.mm */; };
 		76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */; };
 		76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A11B9D8A94008AEC4D /* TENDelayFilter.mm */; };
 		76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76FB90A51B9DAEEB008AEC4D /* TENLPFilter.mm */; };
@@ -132,6 +133,9 @@
 		76F5745E1BA18531009B1166 /* SuperpoweredEcho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredEcho.h; sourceTree = "<group>"; };
 		76F574601BA185B0009B1166 /* TENSuperPoweredEchoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENSuperPoweredEchoFilter.h; sourceTree = "<group>"; };
 		76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENSuperPoweredEchoFilter.mm; sourceTree = "<group>"; };
+		76F574631BA1A535009B1166 /* SuperpoweredFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFilter.h; sourceTree = "<group>"; };
+		76F574651BA1A588009B1166 /* TENSuperPoweredLPFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENSuperPoweredLPFilter.h; sourceTree = "<group>"; };
+		76F574661BA1A588009B1166 /* TENSuperPoweredLPFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENSuperPoweredLPFilter.mm; sourceTree = "<group>"; };
 		76FB909C1B9D7140008AEC4D /* TENEqualizerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENEqualizerFilter.h; sourceTree = "<group>"; };
 		76FB909D1B9D7140008AEC4D /* TENEqualizerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENEqualizerFilter.mm; sourceTree = "<group>"; };
 		76FB90A01B9D8A94008AEC4D /* TENDelayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENDelayFilter.h; sourceTree = "<group>"; };
@@ -539,6 +543,7 @@
 		76F574321BA1682D009B1166 /* Superpowered */ = {
 			isa = PBXGroup;
 			children = (
+				76F574631BA1A535009B1166 /* SuperpoweredFilter.h */,
 				76F5745E1BA18531009B1166 /* SuperpoweredEcho.h */,
 				76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */,
 				76F574371BA1682D009B1166 /* Superpowered3BandEQ.h */,
@@ -565,9 +570,19 @@
 			path = TENSuperPoweredEchoFilter;
 			sourceTree = "<group>";
 		};
+		76F574641BA1A566009B1166 /* TENSuperPoweredLPFilter */ = {
+			isa = PBXGroup;
+			children = (
+				76F574651BA1A588009B1166 /* TENSuperPoweredLPFilter.h */,
+				76F574661BA1A588009B1166 /* TENSuperPoweredLPFilter.mm */,
+			);
+			path = TENSuperPoweredLPFilter;
+			sourceTree = "<group>";
+		};
 		76FB90931B9D70CD008AEC4D /* DSP */ = {
 			isa = PBXGroup;
 			children = (
+				76F574641BA1A566009B1166 /* TENSuperPoweredLPFilter */,
 				76F5745F1BA185A2009B1166 /* TENSuperPoweredEchoFilter */,
 				76F5745A1BA16BD2009B1166 /* TENSuperPoweredEQFilter */,
 				76FB90A31B9DAEE1008AEC4D /* TENLPFilter */,
@@ -708,6 +723,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F574671BA1A588009B1166 /* TENSuperPoweredLPFilter.mm in Sources */,
 				762209641B9075C5000E2B9C /* TENStartViewController.mm in Sources */,
 				76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */,
 				7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */,

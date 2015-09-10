@@ -17,7 +17,8 @@
 #import "TENSuperPoweredEQFilter.h"
 #import "TENSuperPoweredEchoFilter.h"
 
-static const BOOL TENNonInterleaved = NO;
+static const BOOL TENNonInterleaved = YES;
+//static const BOOL TENNonInterleaved = NO;
 
 static NSString * const kTENSourceName      = @"didy";
 //static NSString * const kTENSourceName      = @"test";
@@ -234,10 +235,10 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
     
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
 //    TENDelayFilter *filter = [TENDelayFilter new];
-//    TENLPFilter *filter = [TENLPFilter new];
+    TENLPFilter *filter = [TENLPFilter new];
     
 //  set TENNonInterleaved = NO
-    TENSuperPoweredEQFilter *filter = [TENSuperPoweredEQFilter new];
+//    TENSuperPoweredEQFilter *filter = [TENSuperPoweredEQFilter new];
 //    TENSuperPoweredEchoFilter *filter = [TENSuperPoweredEchoFilter new];
     
     [filter setup];
