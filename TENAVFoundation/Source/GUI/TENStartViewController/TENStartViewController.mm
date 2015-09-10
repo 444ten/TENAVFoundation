@@ -14,10 +14,14 @@
 #import "TENDelayFilter.h"
 #import "TENLPFilter.h"
 
-//static NSString * const kTENSourceName      = @"didy";
+#import "TENSuperPoweredEQFilter.h"
+
+static const BOOL TENNonInterleaved = NO;
+
+static NSString * const kTENSourceName      = @"didy";
 //static NSString * const kTENSourceName      = @"test";
 //static NSString * const kTENSourceName      = @"lady";
-static NSString * const kTENSourceName      = @"klss";
+//static NSString * const kTENSourceName      = @"klss";
 
 static NSString * const kTENSourceExtension = @"mp3";
 
@@ -101,7 +105,7 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
                                                      AVNumberOfChannelsKey : @(2),
                                                      AVLinearPCMIsFloatKey : @(YES),
                                                      AVLinearPCMBitDepthKey : @(32),
-                                                     AVLinearPCMIsNonInterleaved : @(YES)
+                                                     AVLinearPCMIsNonInterleaved : @(TENNonInterleaved)
                                                      };
         
         _output = [AVAssetReaderTrackOutput assetReaderTrackOutputWithTrack:track
@@ -225,9 +229,14 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
+//  set TENNonInterleaved = YES
+    
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
-    TENDelayFilter *filter = [TENDelayFilter new];
+//    TENDelayFilter *filter = [TENDelayFilter new];
 //    TENLPFilter *filter = [TENLPFilter new];
+    
+//  set TENNonInterleaved = NO
+    TENSuperPoweredEQFilter *filter = [TENSuperPoweredEQFilter new];
     
     [filter setup];
     self.filter = filter;
@@ -254,7 +263,9 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
             
             if (sampleBuffer) {
                 uint32_t flags = kCMSampleBufferFlag_AudioBufferList_Assure16ByteAlignment;
-                size_t bufferSize = sizeof(AudioBufferList) + sizeof(AudioBuffer);
+
+                size_t bufferSize = sizeof(AudioBufferList);
+                bufferSize += TENNonInterleaved ? sizeof(AudioBuffer) : 0;
                 
                 self.audioBufferList = (AudioBufferList *)calloc(1, bufferSize);
                 
