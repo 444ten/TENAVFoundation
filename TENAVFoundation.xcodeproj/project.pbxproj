@@ -36,8 +36,8 @@
 		762209641B9075C5000E2B9C /* TENStartViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 762209621B9075C5000E2B9C /* TENStartViewController.mm */; };
 		762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 762209631B9075C5000E2B9C /* TENStartViewController.xib */; };
 		762209681B907E06000E2B9C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 762209671B907E06000E2B9C /* test.mp3 */; };
+		763C903A1BA852C8002E6597 /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 763C90391BA852C8002E6597 /* klss.mp3 */; };
 		769DC1551B95D57600739040 /* lady.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769DC1541B95D57600739040 /* lady.mp3 */; };
-		76F574301B9F209F009B1166 /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76F5742F1B9F209F009B1166 /* klss.mp3 */; };
 		76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */; };
 		76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F5745C1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm */; };
 		76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */; };
@@ -106,8 +106,8 @@
 		762209621B9075C5000E2B9C /* TENStartViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENStartViewController.mm; sourceTree = "<group>"; };
 		762209631B9075C5000E2B9C /* TENStartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TENStartViewController.xib; sourceTree = "<group>"; };
 		762209671B907E06000E2B9C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		763C90391BA852C8002E6597 /* klss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = klss.mp3; sourceTree = "<group>"; };
 		769DC1541B95D57600739040 /* lady.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lady.mp3; sourceTree = "<group>"; };
-		76F5742F1B9F209F009B1166 /* klss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = klss.mp3; sourceTree = "<group>"; };
 		76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperpoweredAudio.a; sourceTree = "<group>"; };
 		76F574371BA1682D009B1166 /* Superpowered3BandEQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Superpowered3BandEQ.h; sourceTree = "<group>"; };
 		76F574441BA1682D009B1166 /* SuperpoweredFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFX.h; sourceTree = "<group>"; };
@@ -444,7 +444,7 @@
 				762209671B907E06000E2B9C /* test.mp3 */,
 				76138B2E1B998C4100E03BF5 /* didy.mp3 */,
 				769DC1541B95D57600739040 /* lady.mp3 */,
-				76F5742F1B9F209F009B1166 /* klss.mp3 */,
+				763C90391BA852C8002E6597 /* klss.mp3 */,
 			);
 			name = Music;
 			path = TENAVFoundation/Music;
@@ -617,9 +617,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F574301B9F209F009B1166 /* klss.mp3 in Resources */,
 				762209491B9074ED000E2B9C /* LaunchScreen.xib in Resources */,
 				762209651B9075C5000E2B9C /* TENStartViewController.xib in Resources */,
+				763C903A1BA852C8002E6597 /* klss.mp3 in Resources */,
 				769DC1551B95D57600739040 /* lady.mp3 in Resources */,
 				762209681B907E06000E2B9C /* test.mp3 in Resources */,
 				762209461B9074ED000E2B9C /* Images.xcassets in Resources */,

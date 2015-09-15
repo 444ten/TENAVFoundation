@@ -92,11 +92,11 @@ static NSUInteger zfxError;
     
     delayInS += sign * step;
     
-    if (delayInS >= 1.0 || delayInS < step) {
+    if (delayInS > 1.0 || delayInS < step) {
         sign *= -1.0;
     }
 
-//    NSLog(@"-- %f",delayInS);
+    NSLog(@"-- %f",delayInS);
     
     zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, delayInS);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
