@@ -18,8 +18,8 @@
 #import "TENSuperPoweredEchoFilter.h"
 #import "TENSuperPoweredLPFilter.h"
 
-//static const BOOL TENNonInterleaved = YES; 
-static const BOOL TENNonInterleaved = NO;
+static const BOOL TENNonInterleaved = YES; 
+//static const BOOL TENNonInterleaved = NO;
 
 //static NSString * const kTENSourceName      = @"didy";
 //static NSString * const kTENSourceName      = @"test";
@@ -232,16 +232,19 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 - (IBAction)onProcess:(id)sender {
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
+// **** zPlane ****
 //  set TENNonInterleaved = YES
     
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
 //    TENDelayFilter *filter = [TENDelayFilter new];
-//    TENLPFilter *filter = [TENLPFilter new];
+    TENLPFilter *filter = [TENLPFilter new];
     
+
+// **** superPowered ****
 //  set TENNonInterleaved = NO
 //    TENSuperPoweredEQFilter *filter = [TENSuperPoweredEQFilter new];
 //    TENSuperPoweredEchoFilter *filter = [TENSuperPoweredEchoFilter new];
-    TENSuperPoweredLPFilter *filter = [TENSuperPoweredLPFilter new];
+//    TENSuperPoweredLPFilter *filter = [TENSuperPoweredLPFilter new];
     
     [filter setup];
     self.filter = filter;
