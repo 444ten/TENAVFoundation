@@ -51,13 +51,13 @@ static CResonanceFilterIf *lpPtr;
 }
 
 - (void)update {
-    static float step = 500;
-    static float coefficient = 1000;
+    static float step = 8000.0;
+    static float coefficient = 200;
     static float sign = 1.0;
     
     coefficient += sign * step;
     
-    if (coefficient >= 4000 || coefficient <= 1000) {
+    if (coefficient >= 8200 || coefficient <= 200) {
         sign *= -1.0;
     }
     

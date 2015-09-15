@@ -8,14 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		76138B2F1B998C4100E03BF5 /* didy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 76138B2E1B998C4100E03BF5 /* didy.mp3 */; };
-		76138B711B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B371B99A44D00E03BF5 /* libaufTAKT.a */; };
-		76138B721B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B381B99A44D00E03BF5 /* libfxpack.a */; };
-		76138B731B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B391B99A44D00E03BF5 /* libOnsetTracking.a */; };
-		76138B741B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */; };
-		76138B751B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */; };
-		76138B761B99A44D00E03BF5 /* libfxpack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3D1B99A44D00E03BF5 /* libfxpack.a */; };
-		76138B771B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */; };
-		76138B781B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */; };
 		76138B791B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B471B99A44D00E03BF5 /* libelastiqueEfficientV3.a */; };
 		76138B7A1B99A44D00E03BF5 /* libResample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B481B99A44D00E03BF5 /* libResample.a */; };
 		76138B7B1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76138B491B99A44D00E03BF5 /* libzplVecLib.a */; };
@@ -67,15 +59,6 @@
 
 /* Begin PBXFileReference section */
 		76138B2E1B998C4100E03BF5 /* didy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = didy.mp3; sourceTree = "<group>"; };
-		76138B331B99A44D00E03BF5 /* aufTAKT_If.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aufTAKT_If.h; sourceTree = "<group>"; };
-		76138B371B99A44D00E03BF5 /* libaufTAKT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libaufTAKT.a; sourceTree = "<group>"; };
-		76138B381B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
-		76138B391B99A44D00E03BF5 /* libOnsetTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOnsetTracking.a; sourceTree = "<group>"; };
-		76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
-		76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libaufTAKT.a; sourceTree = "<group>"; };
-		76138B3D1B99A44D00E03BF5 /* libfxpack.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfxpack.a; sourceTree = "<group>"; };
-		76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOnsetTracking.a; sourceTree = "<group>"; };
-		76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzplVecLib.a; sourceTree = "<group>"; };
 		76138B421B99A44D00E03BF5 /* elastiqueV3API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elastiqueV3API.h; sourceTree = "<group>"; };
 		76138B431B99A44D00E03BF5 /* elastiqueV3DirectAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = elastiqueV3DirectAPI.h; sourceTree = "<group>"; };
 		76138B471B99A44D00E03BF5 /* libelastiqueEfficientV3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libelastiqueEfficientV3.a; sourceTree = "<group>"; };
@@ -153,30 +136,22 @@
 				76138B8C1B99A61500E03BF5 /* AVFoundation.framework in Frameworks */,
 				76138B841B99A44D00E03BF5 /* libResample.a in Frameworks */,
 				76138B7A1B99A44D00E03BF5 /* libResample.a in Frameworks */,
-				76138B721B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
 				76138B8A1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76138B811B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
 				76138B7F1B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
 				76138B7D1B99A44D00E03BF5 /* libResample.a in Frameworks */,
 				76138B891B99A44D00E03BF5 /* libtONaRT.a in Frameworks */,
 				76138B791B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */,
-				76138B751B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */,
-				76138B761B99A44D00E03BF5 /* libfxpack.a in Frameworks */,
-				76138B771B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */,
 				76138B851B99A44D00E03BF5 /* libtONaRT.a in Frameworks */,
 				76138B7B1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
-				76138B731B99A44D00E03BF5 /* libOnsetTracking.a in Frameworks */,
 				76138B7E1B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
-				76138B711B99A44D00E03BF5 /* libaufTAKT.a in Frameworks */,
 				76138B831B99A44D00E03BF5 /* libEqualizer.a in Frameworks */,
-				76138B741B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76138B871B99A44D00E03BF5 /* libEqualizer.a in Frameworks */,
 				76138B861B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76138B7C1B99A44D00E03BF5 /* libelastiqueEfficientV3.a in Frameworks */,
 				76138B881B99A44D00E03BF5 /* libResample.a in Frameworks */,
 				76138B821B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */,
-				76138B781B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 				76138B801B99A44D00E03BF5 /* libzplVecLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,68 +169,11 @@
 		76138B301B99A44D00E03BF5 /* zplane */ = {
 			isa = PBXGroup;
 			children = (
-				76138B311B99A44D00E03BF5 /* auftakt */,
 				76138B401B99A44D00E03BF5 /* elastique */,
 				76138B4E1B99A44D00E03BF5 /* fxpack */,
 				76138B621B99A44D00E03BF5 /* tonart */,
 			);
 			path = zplane;
-			sourceTree = "<group>";
-		};
-		76138B311B99A44D00E03BF5 /* auftakt */ = {
-			isa = PBXGroup;
-			children = (
-				76138B321B99A44D00E03BF5 /* incl */,
-				76138B341B99A44D00E03BF5 /* lib */,
-			);
-			path = auftakt;
-			sourceTree = "<group>";
-		};
-		76138B321B99A44D00E03BF5 /* incl */ = {
-			isa = PBXGroup;
-			children = (
-				76138B331B99A44D00E03BF5 /* aufTAKT_If.h */,
-			);
-			path = incl;
-			sourceTree = "<group>";
-		};
-		76138B341B99A44D00E03BF5 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				76138B351B99A44D00E03BF5 /* ios */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		76138B351B99A44D00E03BF5 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				76138B361B99A44D00E03BF5 /* iphoneos */,
-				76138B3B1B99A44D00E03BF5 /* iphonesimulator */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		76138B361B99A44D00E03BF5 /* iphoneos */ = {
-			isa = PBXGroup;
-			children = (
-				76138B371B99A44D00E03BF5 /* libaufTAKT.a */,
-				76138B381B99A44D00E03BF5 /* libfxpack.a */,
-				76138B391B99A44D00E03BF5 /* libOnsetTracking.a */,
-				76138B3A1B99A44D00E03BF5 /* libzplVecLib.a */,
-			);
-			path = iphoneos;
-			sourceTree = "<group>";
-		};
-		76138B3B1B99A44D00E03BF5 /* iphonesimulator */ = {
-			isa = PBXGroup;
-			children = (
-				76138B3C1B99A44D00E03BF5 /* libaufTAKT.a */,
-				76138B3D1B99A44D00E03BF5 /* libfxpack.a */,
-				76138B3E1B99A44D00E03BF5 /* libOnsetTracking.a */,
-				76138B3F1B99A44D00E03BF5 /* libzplVecLib.a */,
-			);
-			path = iphonesimulator;
 			sourceTree = "<group>";
 		};
 		76138B401B99A44D00E03BF5 /* elastique */ = {
