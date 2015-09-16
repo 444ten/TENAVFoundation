@@ -11,6 +11,7 @@
 #import "ResonanceFilterIf.h"
 
 static CResonanceFilterIf *lpPtr;
+static NSUInteger zfxError;
 
 @implementation TENLPFilter
 
@@ -51,19 +52,33 @@ static CResonanceFilterIf *lpPtr;
 }
 
 - (void)update {
-    static float step = 8000.0;
+    static float step = 3800.0;
     static float coefficient = 200;
     static float sign = 1.0;
     
+    static float resonance = 3.0;
+    
     coefficient += sign * step;
     
-    if (coefficient >= 8200 || coefficient <= 200) {
+    if (coefficient >= 4000 || coefficient <= 200) {
         sign *= -1.0;
+        
+        if (resonance == 4.0) {
+            resonance = 1.0;
+        } else {
+            resonance = 4.0;
+        }
     }
+
+
     
-    NSLog(@"zPlane lp frequency %f", coefficient);
+    NSLog(@"zPlane lp frequency: %f, resonance: %f", coefficient, resonance);
     
-    lpPtr->SetParam(CResonanceFilterIf::kRFilterParamFrequencyInHz, coefficient);
+    zfxError = lpPtr->SetParam(CResonanceFilterIf::kRFilterParamFrequencyInHz, coefficient);
+    zfxError += lpPtr->SetParam(CResonanceFilterIf::kRFilterParamResonance, resonance);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    
+
 }
 
 @end
