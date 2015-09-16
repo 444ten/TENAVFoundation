@@ -70,15 +70,11 @@ static NSUInteger zfxError;
         }
     }
 
-
-    
     NSLog(@"zPlane lp frequency: %f, resonance: %f", coefficient, resonance);
     
     zfxError = lpPtr->SetParam(CResonanceFilterIf::kRFilterParamFrequencyInHz, coefficient);
     zfxError += lpPtr->SetParam(CResonanceFilterIf::kRFilterParamResonance, resonance);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
-    
-
 }
 
 @end
