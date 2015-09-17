@@ -85,20 +85,30 @@ static NSUInteger zfxError;
 }
 
 - (void)update {
-    static float step = 0.01;
+    static float step = 0.4;
     static float delayInS = 0.0;
 
-    static float sign = 1.0;
-    
-    delayInS += sign * step;
-    
-    if (delayInS > 1.0 || delayInS < step) {
-        sign *= -1.0;
-    }
+//    static float sign = 1.0;
+//    
+//    delayInS += sign * step;
+//    
+//    if (delayInS >= 0.99 || delayInS < 0.01) {
+//        sign *= -1.0;
+//    }
 
+
+    if (0.0 == delayInS) {
+        delayInS = 1.0;
+    } else {
+        delayInS = 0.0;
+    }
+    
+    
+    
     NSLog(@"-- %f",delayInS);
     
     zfxError = delayPtr->SetParam(CDelayIf::kDelParamDelayInS, delayInS);
+    zfxError += delayPtr->SetParam(CDelayIf::kDelParamWetnessRel, delayInS);
     NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 

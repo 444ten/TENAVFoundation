@@ -45,19 +45,27 @@ static SuperpoweredFilter *lpFilterPtr;
 }
 
 - (void)update {
-    static float step = 500;
-    static float coefficient = 1000;
+    static float step = 3800.0;
+    static float coefficient = 200;
     static float sign = 1.0;
+    
+    static float resonance = 3.0;
     
     coefficient += sign * step;
     
-    if (coefficient >= 4000 || coefficient <= 1000) {
+    if (coefficient >= 4000 || coefficient <= 200) {
         sign *= -1.0;
+        
+        if (resonance == 4.0) {
+            resonance = 1.0;
+        } else {
+            resonance = 4.0;
+        }
     }
     
-        NSLog(@"superPowered lp frequency%f", coefficient);
+        NSLog(@"superPowered lp freq:%f, resonance:%f", coefficient, resonance);
     
-    lpFilterPtr->setResonantParametersAndType(coefficient, 0.0, SuperpoweredFilter_Resonant_Lowpass);
+    lpFilterPtr->setResonantParametersAndType(coefficient, resonance, SuperpoweredFilter_Resonant_Lowpass);
 }
 
 @end
