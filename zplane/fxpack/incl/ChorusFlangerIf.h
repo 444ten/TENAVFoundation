@@ -206,6 +206,7 @@ public:
     */
     virtual zfxError_t  Reset () = 0;
 
+    float fxpackGetParameterSmooth();
 };
 
 #endif // #if !defined(__libChorusFlangerIf_HEADER_INCLUDED__)
