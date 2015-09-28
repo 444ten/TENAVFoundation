@@ -85,7 +85,7 @@ static NSUInteger zfxError;
 }
 
 - (void)update {
-    static float step = 0.4;
+//    static float step = 0.4;
     static float delayInS = 0.0;
 
 //    static float sign = 1.0;
