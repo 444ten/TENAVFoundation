@@ -11,10 +11,16 @@
 #import "ParamEQIf.h"
 
 static CParametricEqIf *equalizerPtr;
+static NSUInteger zfxError;
 
 static const float      kDefaultLow     = 0.0f;
+
 static const float      kLowBandFreq    = 300.0f;
 static const float      kLowBandQ       = 0.6f;
+
+static const float      kHighBandFreq    = 1600.0f;
+static const float      kHighBandQ       = 0.6f;
+
 static const float      kMaxBandGainDb  = 12.0f;
 
 @implementation TENEqualizerFilter
@@ -28,12 +34,22 @@ static const float      kMaxBandGainDb  = 12.0f;
         float sampleRate = 44100;
         int numberOfChanel = 2;
         
-        CParametricEqIf::CreateInstance(equalizerPtr, sampleRate, numberOfChanel);
-        equalizerPtr->SetBypass(false);
-        equalizerPtr->SetType(CParametricEqIf::kLShelv12);
-        equalizerPtr->SetParam(CParametricEqIf::kEqParamFrequency, kLowBandFreq);
-        equalizerPtr->SetParam(CParametricEqIf::kEqParamQ, kLowBandQ);
-        equalizerPtr->SetAddDenormalNoise(false);
+        zfxError = CParametricEqIf::CreateInstance(equalizerPtr, sampleRate, numberOfChanel);
+        zfxError += equalizerPtr->SetBypass(false);
+        
+// Low Band
+//        zfxError += equalizerPtr->SetType(CParametricEqIf::kLShelv12);
+//        zfxError += equalizerPtr->SetParam(CParametricEqIf::kEqParamFrequency, kLowBandFreq);
+//        zfxError += equalizerPtr->SetParam(CParametricEqIf::kEqParamQ, kLowBandQ);
+        
+// High Band
+        zfxError += equalizerPtr->SetType(CParametricEqIf::kHShelv12);
+        zfxError += equalizerPtr->SetParam(CParametricEqIf::kEqParamFrequency, kHighBandFreq);
+        zfxError += equalizerPtr->SetParam(CParametricEqIf::kEqParamQ, kHighBandQ);
+        
+        zfxError += equalizerPtr->SetAddDenormalNoise(false);
+        
+        NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     }
     
     return self;
@@ -43,7 +59,9 @@ static const float      kMaxBandGainDb  = 12.0f;
 #pragma mark Public
 
 - (void)setup {
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, kDefaultLow);
+    zfxError = equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, kDefaultLow);
+    
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 - (void)processWithAudioBufferList:(AudioBufferList *)audioBufferList framesCount:(UInt32)framesCount {
@@ -57,11 +75,12 @@ static const float      kMaxBandGainDb  = 12.0f;
     
     [self update];
     
-    equalizerPtr->Process(planes, planes, framesCount);
+    zfxError = equalizerPtr->Process(planes, planes, framesCount);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 - (void)update {
-    static float step = 0.5;
+    static float step = 0.05;
     static float coefficient =  0.0;
     static float sign = 1.0;
     
@@ -71,7 +90,10 @@ static const float      kMaxBandGainDb  = 12.0f;
         sign *= -1.0;
     }
 
-    equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, coefficient * kMaxBandGainDb);
+    NSLog(@"zPlane EQ highBand: %f", coefficient);
+    
+    zfxError = equalizerPtr->SetParam(CParametricEqIf::kEqParamGain, coefficient * kMaxBandGainDb);
+    NSAssert(kNoError == zfxError, @"%@: %@ error", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 @end

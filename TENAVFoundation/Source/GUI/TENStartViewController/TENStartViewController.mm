@@ -13,6 +13,7 @@
 #import "TENEqualizerFilter.h"
 #import "TENDelayFilter.h"
 #import "TENLPFilter.h"
+#import "TENFlangerFilter.h"
 
 #import "TENSuperPoweredEQFilter.h"
 #import "TENSuperPoweredEchoFilter.h"
@@ -236,8 +237,9 @@ static NSString * const kTENDateFormat              = @"yyyy-MM-dd HH:mm:ss";
 //  set TENNonInterleaved = YES
     
 //    TENEqualizerFilter *filter = [TENEqualizerFilter new];
-    TENDelayFilter *filter = [TENDelayFilter new];
+//    TENDelayFilter *filter = [TENDelayFilter new];
 //    TENLPFilter *filter = [TENLPFilter new];
+    TENFlangerFilter *filter = [TENFlangerFilter new];
     
 
 // **** superPowered ****

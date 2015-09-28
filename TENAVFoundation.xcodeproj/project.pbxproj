@@ -38,6 +38,7 @@
 		762209681B907E06000E2B9C /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 762209671B907E06000E2B9C /* test.mp3 */; };
 		763C903A1BA852C8002E6597 /* klss.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 763C90391BA852C8002E6597 /* klss.mp3 */; };
 		769DC1551B95D57600739040 /* lady.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 769DC1541B95D57600739040 /* lady.mp3 */; };
+		76EE6DBF1BB9424200D6346D /* TENFlangerFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76EE6DBE1BB9424200D6346D /* TENFlangerFilter.mm */; settings = {ASSET_TAGS = (); }; };
 		76F574541BA1682D009B1166 /* libSuperpoweredAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */; };
 		76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F5745C1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm */; };
 		76F574621BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 76F574611BA185B0009B1166 /* TENSuperPoweredEchoFilter.mm */; };
@@ -108,6 +109,8 @@
 		762209671B907E06000E2B9C /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		763C90391BA852C8002E6597 /* klss.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = klss.mp3; sourceTree = "<group>"; };
 		769DC1541B95D57600739040 /* lady.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lady.mp3; sourceTree = "<group>"; };
+		76EE6DBD1BB9424200D6346D /* TENFlangerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TENFlangerFilter.h; sourceTree = "<group>"; };
+		76EE6DBE1BB9424200D6346D /* TENFlangerFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TENFlangerFilter.mm; sourceTree = "<group>"; };
 		76F574351BA1682D009B1166 /* libSuperpoweredAudio.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSuperpoweredAudio.a; sourceTree = "<group>"; };
 		76F574371BA1682D009B1166 /* Superpowered3BandEQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Superpowered3BandEQ.h; sourceTree = "<group>"; };
 		76F574441BA1682D009B1166 /* SuperpoweredFX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperpoweredFX.h; sourceTree = "<group>"; };
@@ -450,6 +453,15 @@
 			path = TENAVFoundation/Music;
 			sourceTree = "<group>";
 		};
+		76EE6DBC1BB9422900D6346D /* TENFlangerFilter */ = {
+			isa = PBXGroup;
+			children = (
+				76EE6DBD1BB9424200D6346D /* TENFlangerFilter.h */,
+				76EE6DBE1BB9424200D6346D /* TENFlangerFilter.mm */,
+			);
+			path = TENFlangerFilter;
+			sourceTree = "<group>";
+		};
 		76F574311BA167F0009B1166 /* superPowered */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +512,7 @@
 		76FB90931B9D70CD008AEC4D /* DSP */ = {
 			isa = PBXGroup;
 			children = (
+				76EE6DBC1BB9422900D6346D /* TENFlangerFilter */,
 				76F574641BA1A566009B1166 /* TENSuperPoweredLPFilter */,
 				76F5745F1BA185A2009B1166 /* TENSuperPoweredEchoFilter */,
 				76F5745A1BA16BD2009B1166 /* TENSuperPoweredEQFilter */,
@@ -646,6 +659,7 @@
 				76F5745D1BA16BE4009B1166 /* TENSuperPoweredEQFilter.mm in Sources */,
 				7622093E1B9074ED000E2B9C /* AppDelegate.m in Sources */,
 				76FB90A21B9D8A94008AEC4D /* TENDelayFilter.mm in Sources */,
+				76EE6DBF1BB9424200D6346D /* TENFlangerFilter.mm in Sources */,
 				7622093B1B9074ED000E2B9C /* main.m in Sources */,
 				76FB909E1B9D7140008AEC4D /* TENEqualizerFilter.mm in Sources */,
 				76FB90A61B9DAEEB008AEC4D /* TENLPFilter.mm in Sources */,
@@ -720,7 +734,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -759,7 +773,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -772,7 +786,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TENAVFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -791,7 +805,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TENAVFoundation/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
