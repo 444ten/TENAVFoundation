@@ -52,7 +52,7 @@ static NSUInteger zfxError;
 }
 
 - (void)update {
-    static float step = 300.0;
+    static float step = 3000.0;
     static float coefficient = 1000;
     static float sign = 1.0;
     
